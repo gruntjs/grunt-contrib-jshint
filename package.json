@@ -29,7 +29,7 @@
     "jshint": "~0.9.0"
   },
   "devDependencies": {
-    "grunt-contrib-clean": "0.4.0a",
+    "grunt-contrib-nodeunit": "0.1.0",
     "grunt": "~0.4.0a"
   },
   "keywords": [
