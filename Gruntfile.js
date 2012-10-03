@@ -1,8 +1,8 @@
 /*
  * grunt-contrib-jshint
- * https://github.com/gruntjs/grunt-contrib-jshint
+ * http://gruntjs.com/
  *
- * Copyright (c) 2012 "Cowboy" Ben Alman
+ * Copyright (c) 2012 "Cowboy" Ben Alman, contributors
  * Licensed under the MIT license.
  */
 
@@ -38,7 +38,7 @@ module.exports = function(grunt) {
   // Actually load this plugin's task(s).
   grunt.loadTasks('tasks');
 
-  // By default, lint and run all tests.
-  grunt.registerTask('default', ['jshint']);
+  // By default, lint task.
+  grunt.registerTask('default', 'jshint');
 
 };
