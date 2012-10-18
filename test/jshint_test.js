@@ -3,13 +3,6 @@
 var grunt = require('grunt');
 var jshint = require('../tasks/lib/jshint').init(grunt);
 
-// In case the grunt being used to test is different than the grunt being
-// tested, initialize the task and config subsystems.
-if (grunt.task.searchDirs.length === 0) {
-  grunt.task.init([]);
-  grunt.config.init({});
-}
-
 exports['jshint'] = function(test) {
   test.expect(1);
   grunt.log.muted = true;

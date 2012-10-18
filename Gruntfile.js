@@ -16,6 +16,7 @@ module.exports = function(grunt) {
       all: [
         'Gruntfile.js',
         'tasks/*.js',
+        '<%= nodeunit.tests %>'
       ],
       options: {
         jshintrc: '.jshintrc',
@@ -31,13 +32,14 @@ module.exports = function(grunt) {
   // Actually load this plugin's task(s).
   grunt.loadTasks('tasks');
 
-  // The jshint plugin is used for linting.
+  // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
+  grunt.loadNpmTasks('grunt-contrib-internal');
 
-  // Rename nodeunit to test.
-  grunt.registerTask('test', 'nodeunit');
+  // Whenever the "test" task is run, run the "nodeunit" task.
+  grunt.registerTask('test', ['nodeunit']);
 
   // By default, lint and run all tests.
-  grunt.registerTask('default', ['jshint', 'test']);
+  grunt.registerTask('default', ['jshint', 'test', 'build-contrib']);
 
 };

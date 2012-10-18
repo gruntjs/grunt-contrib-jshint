@@ -26,7 +26,6 @@ module.exports = function(grunt) {
       options.globals = {};
     }
     // Convert deprecated "predef" array into globals.
-    // Also see https://github.com/jshint/node-jshint/issues/104
     if (options.predef) {
       options.predef.forEach(function(key) {
         options.globals[key] = true;
