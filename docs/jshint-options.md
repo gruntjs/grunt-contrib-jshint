@@ -1,20 +1,23 @@
 # Options
+{%= s.multi_task_options %}
 
-Any option that JSHint supports can be specified as an option in the task or target `options` object. See the [JSHint documentation](http://www.jshint.com/docs/) for a list of supported options.
+Any specified option will be passed through directly to JSHint, thus you can specify any option that JSHint supports. See the [JSHint documentation][] for a list of supported options.
 
-In addition, these other options are supported:
+[JSHint documentation]: http://www.jshint.com/docs/
 
-## options.globals
+A few additional options are supported:
+
+## globals
 Type: `Object`
 Default value: `null`
 
-An object containing names of globals that will be ignored for every linted file.
+An object of global variables, with keys as names and a boolean value to determine if they are assignable. This is not a standard JSHint option, but gets passed into the `JSHINT` function as its third argument. See the [JSHint documentation][] for more information.
 
-## options.jshintrc
+## jshintrc
 Type: `String`
 Default value: `null`
 
-If this filename is specified, options and globals defined therein will be used. The `jshintrc` file must be valid JSON and would look something like this:
+If this filename is specified, options and globals defined therein will be used. The `jshintrc` file must be valid JSON and looks something like this:
 
 ```json
 {

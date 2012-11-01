@@ -5,63 +5,41 @@
 _Note that this plugin has not yet been released, and only works with the latest bleeding-edge, in-development version of grunt. See the [When will I be able to use in-development feature 'X'?](https://github.com/gruntjs/grunt/blob/devel/docs/faq.md#when-will-i-be-able-to-use-in-development-feature-x) FAQ entry for more information._
 
 ## Getting Started
-_If you haven't used [grunt][] before, be sure to check out the [Getting Started][] guide._
+If you haven't used [grunt][] before, be sure to check out the [Getting Started][] guide, as it explains how to create a [gruntfile][Getting Started] as well as install and use grunt plugins. Once you're familiar with that process, install this plugin with this command:
 
-From the same directory as your project's [Gruntfile][Getting Started] and [package.json][], install this plugin with the following command:
-
-```bash
+```shell
 npm install grunt-contrib-jshint --save-dev
 ```
 
-Once that's done, add this line to your project's Gruntfile:
-
-```js
-grunt.loadNpmTasks('grunt-contrib-jshint');
-```
-
-If the plugin has been installed correctly, running `grunt --help` at the command line should list the newly-installed plugin's task or tasks. In addition, the plugin should be listed in package.json as a `devDependency`, which ensures that it will be installed whenever the `npm install` command is run.
-
 [grunt]: http://gruntjs.com/
 [Getting Started]: https://github.com/gruntjs/grunt/blob/devel/docs/getting_started.md
-[package.json]: https://npmjs.org/doc/json.html
 
 
-## The jshint task
+## Jshint task
+_Run this task with the `grunt jshint` command._
 
-### Overview
-
-In your project's Gruntfile, add a section named `jshint` to the data object passed into `grunt.initConfig()`.
-
-```js
-grunt.initConfig({
-  jshint: {
-    options: {
-      // Task-specific options go here.
-    },
-    your_target: {
-      // Target-specific file lists and/or options go here.
-    },
-  },
-})
-```
 
 ### Options
+_The following options are specified in the task configuration according to the [multi task options](https://github.com/gruntjs/grunt/blob/devel/docs/tasks.md) format._
 
-Any option that JSHint supports can be specified as an option in the task or target `options` object. See the [JSHint documentation](http://www.jshint.com/docs/) for a list of supported options.
 
-In addition, these other options are supported:
+Any specified option will be passed through directly to JSHint, thus you can specify any option that JSHint supports. See the [JSHint documentation][] for a list of supported options.
 
-#### options.globals
+[JSHint documentation]: http://www.jshint.com/docs/
+
+A few additional options are supported:
+
+#### globals
 Type: `Object`
 Default value: `null`
 
-An object containing names of globals that will be ignored for every linted file.
+An object of global variables, with keys as names and a boolean value to determine if they are assignable. This is not a standard JSHint option, but gets passed into the `JSHINT` function as its third argument. See the [JSHint documentation][] for more information.
 
-#### options.jshintrc
+#### jshintrc
 Type: `String`
 Default value: `null`
 
-If this filename is specified, options and globals defined therein will be used. The `jshintrc` file must be valid JSON and would look something like this:
+If this filename is specified, options and globals defined therein will be used. The `jshintrc` file must be valid JSON and looks something like this:
 
 ```json
 {
@@ -74,12 +52,13 @@ If this filename is specified, options and globals defined therein will be used.
   }
 }
 ```
+
 ### Usage examples
 
 #### Wildcards
-In this example, running `grunt jshint` will lint the project's Gruntfile as well as all JavaScript files in the `lib` and `test` directories and their subdirectores, using the default JSHint `options` and `globals`.
+In this example, running `grunt jshint` will lint the project's Gruntfile as well as all JavaScript files in the `lib` and `test` directories and their subdirectores, using the default JSHint options.
 
-```javascript
+```js
 // Project configuration.
 grunt.initConfig({
   jshint: {
@@ -91,9 +70,9 @@ grunt.initConfig({
 #### Linting before and after concatenating
 In this example, running `grunt jshint` will lint both the "beforeconcat" set and "afterconcat" sets of files. This is not ideal, because `dist/output.js` may get linted before it gets created via the [grunt-contrib-concat plugin](https://github.com/gruntjs/grunt-contrib-concat) `concat` task.
 
-In this case, you should lint the "beforeconcat" set first, then concat, then lint the "afterconcat" set, by running `grunt jshint:beforeconcat concat jshint:afterconcat`.
+In this case, you should lint the "beforeconcat" files first, then concat, then lint the "afterconcat" files, by running `grunt jshint:beforeconcat concat jshint:afterconcat`.
 
-```javascript
+```js
 // Project configuration.
 grunt.initConfig({
   concat: {
@@ -111,9 +90,9 @@ grunt.initConfig({
 
 #### Specifying JSHint options and globals
 
-In this example, custom JSHint `options` and `globals` are specified. Note that when `grunt jshint:uses_defaults` is run, those files are linted using the default options, but when `grunt jshint:with_overrides` is run, those files are linted using merged task/target options.
+In this example, custom JSHint options are specified. Note that when `grunt jshint:uses_defaults` is run, those files are linted using the default options, but when `grunt jshint:with_overrides` is run, those files are linted using _merged_ task/target options.
 
-```javascript
+```js
 // Project configuration.
 grunt.initConfig({
   jshint: {
@@ -143,7 +122,10 @@ grunt.initConfig({
 
 ## Release History
 
- * 2012-10-17 - v0.1.0 - Work in progress, not yet officially released.
+ * 2012-10-17   v0.1.0   Work in progress, not yet officially released.
 
---
-Task submitted by <a href="http://benalman.com/">"Cowboy" Ben Alman</a>.
+---
+
+Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
+
+*This file was generated on Thu Nov 01 2012 13:35:37.*
