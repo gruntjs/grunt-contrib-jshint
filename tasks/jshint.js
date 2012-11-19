@@ -40,7 +40,7 @@ module.exports = function(grunt) {
     grunt.verbose.writeflags(globals, 'JSHint globals');
 
     // Lint specified files.
-    var files = grunt.file.expandFiles(this.file.src);
+    var files = this.file.src;
     files.forEach(function(filepath) {
       jshint.lint(grunt.file.read(filepath), options, globals, filepath);
     });
@@ -49,7 +49,7 @@ module.exports = function(grunt) {
     if (this.errorCount) { return false; }
 
     // Otherwise, print a success message.
-    grunt.log.ok(files.length + ' files lint free.');
+    grunt.log.ok(files.length + ' file' + (files.length === 1 ? '' : 's') + ' lint free.');
   });
 
 };

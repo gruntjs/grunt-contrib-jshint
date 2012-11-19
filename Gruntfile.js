@@ -13,11 +13,18 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     jshint: {
-      all: [
+      all_files: [
         'Gruntfile.js',
         'tasks/*.js',
         '<%= nodeunit.tests %>'
       ],
+      individual_files: {
+        files: [
+          {src: 'Gruntfile.js'},
+          {src: 'tasks/*.js'},
+          {src: '<%= nodeunit.tests %>'},
+        ]
+      },
       options: {
         jshintrc: '.jshintrc',
       }
