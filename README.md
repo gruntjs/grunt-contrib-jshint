@@ -23,8 +23,9 @@ _Run this task with the `grunt jshint` command._
 _The following options are specified in the task configuration according to the [multi task options](https://github.com/gruntjs/grunt/blob/devel/docs/tasks.md) format._
 
 
-Any specified option will be passed through directly to JSHint, thus you can specify any option that JSHint supports. See the [JSHint documentation][] for a list of supported options.
+Any specified option will be passed through directly to [JSHint][], thus you can specify any option that JSHint supports. See the [JSHint documentation][] for a list of supported options.
 
+[JSHint]: http://www.jshint.com/
 [JSHint documentation]: http://www.jshint.com/docs/
 
 A few additional options are supported:
@@ -128,4 +129,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Mon Nov 19 2012 11:35:43.*
+*This file was generated on Mon Nov 19 2012 15:52:02.*
