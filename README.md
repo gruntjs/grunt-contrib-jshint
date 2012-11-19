@@ -1,4 +1,4 @@
-# grunt-contrib-jshint
+# grunt-contrib-jshint [![Build Status](https://secure.travis-ci.org/gruntjs/grunt-contrib-jshint.png?branch=master)](http://travis-ci.org/gruntjs/grunt-contrib-jshint)
 
 > Validate files with JSHint.
 
@@ -128,4 +128,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Tue Nov 13 2012 16:09:48.*
+*This file was generated on Mon Nov 19 2012 11:35:43.*
