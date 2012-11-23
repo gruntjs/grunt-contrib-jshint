@@ -34,7 +34,7 @@ A few additional options are supported:
 Type: `Object`
 Default value: `null`
 
-An object of global variables, with keys as names and a boolean value to determine if they are assignable. This is not a standard JSHint option, but gets passed into the `JSHINT` function as its third argument. See the [JSHint documentation][] for more information.
+A map of global variables, with keys as names and a boolean value to determine if they are assignable. This is not a standard JSHint option, but is passed into the `JSHINT` function as its third argument. See the [JSHint documentation][] for more information.
 
 #### jshintrc
 Type: `String`
@@ -129,4 +129,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Mon Nov 19 2012 15:52:02.*
+*This file was generated on Fri Nov 23 2012 12:13:11.*

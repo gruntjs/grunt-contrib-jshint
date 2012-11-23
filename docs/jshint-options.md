@@ -12,7 +12,7 @@ A few additional options are supported:
 Type: `Object`
 Default value: `null`
 
-An object of global variables, with keys as names and a boolean value to determine if they are assignable. This is not a standard JSHint option, but gets passed into the `JSHINT` function as its third argument. See the [JSHint documentation][] for more information.
+A map of global variables, with keys as names and a boolean value to determine if they are assignable. This is not a standard JSHint option, but is passed into the `JSHINT` function as its third argument. See the [JSHint documentation][] for more information.
 
 ## jshintrc
 Type: `String`
