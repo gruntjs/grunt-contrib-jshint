@@ -1,5 +1,4 @@
 # Options
-{%= s.multi_task_options %}
 
 Any specified option will be passed through directly to [JSHint][], thus you can specify any option that JSHint supports. See the [JSHint documentation][] for a list of supported options.
 

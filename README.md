@@ -18,10 +18,11 @@ npm install grunt-contrib-jshint --save-dev
 ## Jshint task
 _Run this task with the `grunt jshint` command._
 
+_This task is a [multi task][] so any targets, files and options should be specified according to the [multi task][] documentation._
+[multi task]: https://github.com/gruntjs/grunt/wiki/Configuring-tasks
+
 
 ### Options
-_The following options are specified in the task configuration according to the [multi task options](https://github.com/gruntjs/grunt/blob/devel/docs/tasks.md) format._
-
 
 Any specified option will be passed through directly to [JSHint][], thus you can specify any option that JSHint supports. See the [JSHint documentation][] for a list of supported options.
 
@@ -57,7 +58,7 @@ If this filename is specified, options and globals defined therein will be used.
 ### Usage examples
 
 #### Wildcards
-In this example, running `grunt jshint` will lint the project's Gruntfile as well as all JavaScript files in the `lib` and `test` directories and their subdirectores, using the default JSHint options.
+In this example, running `grunt jshint:all` (or `grunt jshint` because `jshint` is a [multi task][]) will lint the project's Gruntfile as well as all JavaScript files in the `lib` and `test` directories and their subdirectores, using the default JSHint options.
 
 ```js
 // Project configuration.
@@ -129,4 +130,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Fri Nov 23 2012 12:13:11.*
+*This file was generated on Wed Nov 28 2012 08:49:23.*

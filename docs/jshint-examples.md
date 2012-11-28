@@ -1,7 +1,7 @@
 # Usage examples
 
 ## Wildcards
-In this example, running `grunt jshint` will lint the project's Gruntfile as well as all JavaScript files in the `lib` and `test` directories and their subdirectores, using the default JSHint options.
+In this example, running `grunt jshint:all` (or `grunt jshint` because `jshint` is a [multi task][]) will lint the project's Gruntfile as well as all JavaScript files in the `lib` and `test` directories and their subdirectores, using the default JSHint options.
 
 ```js
 // Project configuration.
