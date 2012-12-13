@@ -29,10 +29,9 @@
     "jshint": "~0.9.0"
   },
   "devDependencies": {
-    "grunt-contrib-nodeunit": "0.1.0",
-    "grunt-contrib-internal": "*",
-    "grunt": "~0.4.0a",
-    "grunt-cli": "~0.1.1"
+    "grunt-contrib-nodeunit": "~0.1.0",
+    "grunt-contrib-internal": "~0.1.0",
+    "grunt": "~0.4.0"
   },
   "keywords": [
   ]
