@@ -16,17 +16,20 @@ module.exports = function(grunt) {
       all_files: [
         'Gruntfile.js',
         'tasks/*.js',
-        '<%= nodeunit.tests %>'
+        '<%= nodeunit.tests %>',
+        'test/fixtures/*.js'
       ],
       individual_files: {
         files: [
           {src: 'Gruntfile.js'},
           {src: 'tasks/*.js'},
           {src: '<%= nodeunit.tests %>'},
+          {src: 'test/fixtures/*.js'}
         ]
       },
       options: {
         jshintrc: '.jshintrc',
+        jshintignore: '.jshintignore'
       }
     },
 

@@ -55,6 +55,29 @@ If this filename is specified, options and globals defined therein will be used.
 }
 ```
 
+#### jshintignore
+Type: `String`
+Default value: `null`
+
+If this filename is given then any directories or files specified will be skipped over.
+For example, there are two files `foo/bar.js` and `foo/baz.js`, and the content of `.jshintignore` is
+
+```
+foo/bar.js
+```
+
+then following `jshint` task checks `foo/baz.js` but ignores `foo/bar.js`.
+
+```javascript
+jshint: {
+  all: ["foo/*.js"],
+  options: {
+    jshintrc: ".jshintrc",
+    jshintignore: ".jshintignore"
+  }
+}
+```
+
 ### Usage examples
 
 #### Wildcards
@@ -124,10 +147,10 @@ grunt.initConfig({
 
 ## Release History
 
- * 2012-10-17   v0.1.0   Work in progress, not yet officially released.
+ * 2012-10-18   v0.1.0   Work in progress, not yet officially released.
 
 ---
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Wed Nov 28 2012 08:49:23.*
+*This file was generated on Sun Dec 30 2012 01:56:18.*
