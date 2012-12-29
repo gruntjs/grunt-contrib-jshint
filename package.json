@@ -26,7 +26,8 @@
     "node": ">= 0.8.0"
   },
   "dependencies": {
-    "jshint": "~0.9.0"
+    "jshint": "~0.9.0",
+    "minimatch": "~0.0.5"
   },
   "devDependencies": {
     "grunt-contrib-nodeunit": "~0.1.0",

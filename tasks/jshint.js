@@ -12,10 +12,39 @@ module.exports = function(grunt) {
 
   // Internal lib.
   var jshint = require('./lib/jshint').init(grunt);
+  var path = require('path');
+  var minimatch = require('minimatch');
+
+  var shouldIgnore = function(somePath, ignore) {
+    var isIgnored = function(p) {
+      var fnmatch = minimatch(somePath, p, {nocase: true});
+      var absmatch = path.resolve(somePath) === p;
+      var lsmatch = grunt.file.isDir(p) && p.match(/^[^\/]*\/?$/) &&
+          somePath.match(new RegExp("^" + p + ".*"));
+      return !!(fnmatch || absmatch || lsmatch);
+    };
+    return ignore.some(function(ignorePath) {
+      return isIgnored(ignorePath);
+    });
+  };
 
   grunt.registerMultiTask('jshint', 'Validate files with JSHint.', function() {
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options();
+
+    var ignores;
+    if (options.jshintignore) {
+      var ignoreFile = options.jshintignore;
+      delete options.jshintignore;
+
+      ignores = grunt.file.read(ignoreFile).split("\n")
+          .filter(function(line) {
+            return !!line.trim();
+          })
+          .map(function(line) {
+            return path.resolve(path.dirname(ignoreFile), line.trim());
+          });
+    }
 
     // Read JSHint options from a specified jshintrc file.
     if (options.jshintrc) {
@@ -41,6 +70,11 @@ module.exports = function(grunt) {
 
     // Lint specified files.
     var files = this.file.src;
+    if (ignores) {
+      files = files.filter(function(filepath) {
+        return !shouldIgnore(filepath, ignores);
+      });
+    }
     files.forEach(function(filepath) {
       jshint.lint(grunt.file.read(filepath), options, globals, filepath);
     });

@@ -30,3 +30,26 @@ If this filename is specified, options and globals defined therein will be used.
   }
 }
 ```
+
+## jshintignore
+Type: `String`
+Default value: `null`
+
+If this filename is given then any directories or files specified will be skipped over.
+For example, there are two files `foo/bar.js` and `foo/baz.js`, and the content of `.jshintignore` is
+
+```
+foo/bar.js
+```
+
+then following `jshint` task checks `foo/baz.js` but ignores `foo/bar.js`.
+
+```javascript
+jshint: {
+  all: ["foo/*.js"],
+  options: {
+    jshintrc: ".jshintrc",
+    jshintignore: ".jshintignore"
+  }
+}
+```
