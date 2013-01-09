@@ -124,10 +124,11 @@ grunt.initConfig({
 
 ## Release History
 
+ * 2013-01-08   v0.1.1rc5   Updating to work with grunt v0.4.0rc5. Switching to this.filesSrc api.
  * 2012-10-17   v0.1.0   Work in progress, not yet officially released.
 
 ---
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Wed Nov 28 2012 08:49:23.*
+*This file was generated on Wed Jan 09 2013 14:12:19.*
