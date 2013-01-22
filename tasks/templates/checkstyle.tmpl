@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="4.3"><% obj.files.forEach(function(file) { if (!file.passed) { %>
+  <file name="<%= (obj.workspace || '') + file.filepath %>"><% file.errors.forEach(function(error, index) {if (error) { %>
+    <error line="<% print(error.line); %>" column="<% print(error.character || ''); %>" severity="<% print(error.severity || 'Error') %>" message="<% print(error.reason ? obj.encode(error.reason) : 'Unused variable `' + error.name + '`'); %>" source="<% print(error.raw ? obj.encode(error.raw) : 'Unused variable `' + error.name + '`'); %>" /><% }}); %>
+  </file><% }}); %>
+</checkstyle>
