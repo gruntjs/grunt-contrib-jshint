@@ -123,7 +123,7 @@ grunt.initConfig({
 
 ### Reporting
 
-A report xml can be generated. The currently supported formats are junit and checkstyle. The files are useful for Build/CI Systems like Jenkins. To generate the files just add junit or checkstyle to the config an specify the path where the file should be saved.
+A report xml file can be generated. The currently supported formats are junit and checkstyle. The files are useful for Build/CI Systems like Jenkins. To generate the files just add junit or checkstyle to the config an specify the path where the file should be saved.
 
 ```js
 // Project configuration.
