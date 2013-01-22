@@ -63,3 +63,33 @@ grunt.initConfig({
   },
 });
 ```
+
+## Reporting
+
+A report xml can be generated. The currently supported formats are junit and checkstyle. The files are useful for Build/CI Systems like Jenkins. To generate the files just add junit or checkstyle to the config an specify the path where the file should be saved.
+
+```js
+// Project configuration.
+grunt.initConfig({
+  jshint: {
+    all: ['Gruntfile.js', 'lib/**/*.js', 'test/**/*.js'],
+    junit: 'build/reports/jshint.xml',
+    checkstyle: 'build/reports/jshint_checkstyle.xml',
+    options: {
+      curly: true,
+      eqeqeq: true,
+      eqnull: true,
+      browser: true,
+      globals: {
+        jQuery: true
+      }
+    }
+  }
+});
+```
+
+**Attention!**
+When adding junit or checktyle to the config, you must run the task like this: `jshint:all`. This is because otherwhise jshint will also lint junit and checkstyle, as it assumes that they are also a set of files to lint like the all array.
+
+
+

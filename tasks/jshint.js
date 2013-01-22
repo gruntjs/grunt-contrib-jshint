@@ -78,7 +78,6 @@ module.exports = function(grunt) {
     files.forEach(function(filepath, index) {
       var errors = jshint.lint(grunt.file.read(filepath), options, globals, filepath);
       var passed = true;
-
       if (errors) {
         passed = errors.length === 0;
       }
@@ -93,14 +92,14 @@ module.exports = function(grunt) {
 
     report.encode = encodeHTML;
     report.workspace = grunt.option('workspace') || '';
-
+    // create junit xml report
     if (junit) {
       template = underscore.template(templates.junit, {
         'obj': report
       });
       grunt.file.write(junit, template);
     }
-
+    // create checkstyle xml report
     if (checkstyle) {
       template = underscore.template(templates.checkstyle, {
         'obj': report
