@@ -42,7 +42,9 @@ module.exports = function(grunt) {
     // Lint specified files.
     var files = this.filesSrc;
     files.forEach(function(filepath) {
-      jshint.lint(grunt.file.read(filepath), options, globals, filepath);
+      if (grunt.file.isFile(filepath)) {
+        jshint.lint(grunt.file.read(filepath), options, globals, filepath);
+      }
     });
 
     // Fail task if errors were logged.
