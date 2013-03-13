@@ -20,11 +20,8 @@ module.exports = function(grunt) {
     // Merge JSHint options from a specified jshintrc file.
     if (options.jshintrc) {
       var rc = grunt.file.readJSON(options.jshintrc);
-      Object.keys(rc).forEach(function(key) {
-        var override = Object.hasOwnProperty.call(options, key) ?
-          options[key] : rc[key];
-        options[key] = override;
-      });
+      grunt.util._.defaults(options, rc);
+      delete options.jshintrc;
     }
     // If globals weren't specified, initialize them as an empty object.
     if (!options.globals) {
