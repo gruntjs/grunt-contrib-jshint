@@ -15,7 +15,9 @@ module.exports = function(grunt) {
 
   grunt.registerMultiTask('jshint', 'Validate files with JSHint.', function() {
     // Merge task-specific and/or target-specific options with these defaults.
-    var options = this.options();
+    var options = this.options({
+      force: false
+    });
 
     // Merge JSHint options from a specified jshintrc file.
     if (options.jshintrc) {
@@ -38,6 +40,10 @@ module.exports = function(grunt) {
     var globals = options.globals;
     delete options.globals;
 
+    // Report JSHint errors but dont fail the task
+    var force = options.force;
+    delete options.force;
+
     grunt.verbose.writeflags(options, 'JSHint options');
     grunt.verbose.writeflags(globals, 'JSHint globals');
 
@@ -47,8 +53,8 @@ module.exports = function(grunt) {
       jshint.lint(grunt.file.read(filepath), options, globals, filepath);
     });
 
-    // Fail task if errors were logged.
-    if (this.errorCount) { return false; }
+    // Fail task if errors were logged except if force was set.
+    if (this.errorCount) { return force; }
 
     // Otherwise, print a success message.
     grunt.log.ok(files.length + ' file' + (files.length === 1 ? '' : 's') + ' lint free.');

@@ -59,6 +59,12 @@ If this filename is specified, options and globals defined therein will be used.
 }
 ```
 
+#### force
+Type: `Boolean`
+Default value: `false`
+
+Set `force` to `true` to report JSHint errors but not fail the task.
+
 ### Usage examples
 
 #### Wildcards
@@ -167,4 +173,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Wed Mar 13 2013 21:18:24.*
+*This file was generated on Wed Mar 13 2013 21:44:22.*
