@@ -163,6 +163,7 @@ grunt.initConfig({
 
 ## Release History
 
+ * 2013-03-12   v0.3.0   Bump to JSHint 1.1.0. Add force option to report JSHint errors but not fail the task. Add error/warning code to message. Allow task level options to override jshintrc file.
  * 2013-02-25   v0.2.0   Bump to JSHint 1.0
  * 2013-02-14   v0.1.1   First official release for Grunt 0.4.0.
  * 2013-01-17   v0.1.1rc6   Updating grunt/gruntplugin dependencies to rc6. Changing in-development grunt/gruntplugin dependency versions from tilde version ranges to specific versions.
@@ -173,4 +174,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Wed Mar 13 2013 21:44:22.*
+*This file was generated on Wed Mar 13 2013 21:52:51.*
