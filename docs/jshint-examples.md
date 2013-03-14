@@ -64,6 +64,35 @@ grunt.initConfig({
 });
 ```
 
+#### Merging JSHint options and globals with a jshintrc file
+
+A simple way to use a project-specific `jshintrc` file, augmented with specific options for some targets.
+
+```js
+// Project configuration.
+grunt.initConfig({
+  jshint: {
+    options: {
+      jshintrc: '.jshintrc',
+    },
+    webapp: {
+      options: {
+        globals: {
+          jQuery: true,
+        },
+      },
+      files: ['www/**/*.js'],
+    },
+    server: {
+      options: {
+        node: true,
+      },
+      files: ['api/**/*.js'],
+    },
+  },
+});
+```
+
 ## Reporting
 
 A report xml can be generated. The currently supported formats are junit and checkstyle. The files are useful for Build/CI Systems like Jenkins. To generate the files just add junit or checkstyle to the config an specify the path where the file should be saved.

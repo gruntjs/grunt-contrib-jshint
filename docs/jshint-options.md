@@ -17,7 +17,7 @@ A map of global variables, with keys as names and a boolean value to determine i
 Type: `String`
 Default value: `null`
 
-If this filename is specified, options and globals defined therein will be used. The `jshintrc` file must be valid JSON and looks something like this:
+If this filename is specified, options and globals defined therein will be used. Task and target options override the options within the `jshintrc` file. The `jshintrc` file must be valid JSON and looks something like this:
 
 ```json
 {
@@ -30,3 +30,9 @@ If this filename is specified, options and globals defined therein will be used.
   }
 }
 ```
+
+## force
+Type: `Boolean`
+Default value: `false`
+
+Set `force` to `true` to report JSHint errors but not fail the task.

@@ -2,7 +2,7 @@
  * grunt-contrib-jshint
  * http://gruntjs.com/
  *
- * Copyright (c) 2012 "Cowboy" Ben Alman, contributors
+ * Copyright (c) 2013 "Cowboy" Ben Alman, contributors
  * Licensed under the MIT license.
  */
 
@@ -34,7 +34,9 @@ module.exports = function(grunt) {
 
   grunt.registerMultiTask('jshint', 'Validate files with JSHint.', function() {
     // Merge task-specific and/or target-specific options with these defaults.
-    var options = this.options();
+    var options = this.options({
+      force: false
+    });
 
     var template;
     // get path for junit xml output file
@@ -51,9 +53,11 @@ module.exports = function(grunt) {
       checkstyle: grunt.file.read(__dirname + '/templates/checkstyle.tmpl')
     };
 
-    // Read JSHint options from a specified jshintrc file.
+    // Merge JSHint options from a specified jshintrc file.
     if (options.jshintrc) {
-      options = grunt.file.readJSON(options.jshintrc);
+      var rc = grunt.file.readJSON(options.jshintrc);
+      grunt.util._.defaults(options, rc);
+      delete options.jshintrc;
     }
     // If globals weren't specified, initialize them as an empty object.
     if (!options.globals) {
@@ -69,6 +73,10 @@ module.exports = function(grunt) {
     // Extract globals from options.
     var globals = options.globals;
     delete options.globals;
+
+    // Report JSHint errors but dont fail the task
+    var force = options.force;
+    delete options.force;
 
     grunt.verbose.writeflags(options, 'JSHint options');
     grunt.verbose.writeflags(globals, 'JSHint globals');
@@ -107,8 +115,8 @@ module.exports = function(grunt) {
       grunt.file.write(checkstyle, template);
     }
 
-    // Fail task if errors were logged.
-    if (this.errorCount) { return false; }
+    // Fail task if errors were logged except if force was set.
+    if (this.errorCount) { return force; }
 
     // Otherwise, print a success message.
     grunt.log.ok(files.length + ' file' + (files.length === 1 ? '' : 's') + ' lint free.');
