@@ -22,11 +22,11 @@ module.exports = function(grunt) {
         files: [
           {src: 'Gruntfile.js'},
           {src: 'tasks/*.js'},
-          {src: '<%= nodeunit.tests %>'},
+          {src: '<%= nodeunit.tests %>'}
         ]
       },
       options: {
-        jshintrc: '.jshintrc',
+        jshintrc: '.jshintrc'
       }
     },
 
