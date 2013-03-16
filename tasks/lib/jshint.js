@@ -110,6 +110,8 @@ exports.init = function(grunt) {
       }
     });
     grunt.log.writeln();
+    // return the lint errors
+    return jshint.errors;
   };
 
   return exports;
