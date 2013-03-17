@@ -19,11 +19,9 @@ module.exports = function(grunt) {
       force: false
     });
 
-    // Merge JSHint options from a specified jshintrc file.
+    // Read JSHint options from a specified jshintrc file.
     if (options.jshintrc) {
-      var rc = grunt.file.readJSON(options.jshintrc);
-      grunt.util._.defaults(options, rc);
-      delete options.jshintrc;
+      options = grunt.file.readJSON(options.jshintrc);
     }
     // If globals weren't specified, initialize them as an empty object.
     if (!options.globals) {

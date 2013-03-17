@@ -63,32 +63,3 @@ grunt.initConfig({
   },
 });
 ```
-
-#### Merging JSHint options and globals with a jshintrc file
-
-A simple way to use a project-specific `jshintrc` file, augmented with specific options for some targets.
-
-```js
-// Project configuration.
-grunt.initConfig({
-  jshint: {
-    options: {
-      jshintrc: '.jshintrc',
-    },
-    webapp: {
-      options: {
-        globals: {
-          jQuery: true,
-        },
-      },
-      files: ['www/**/*.js'],
-    },
-    server: {
-      options: {
-        node: true,
-      },
-      files: ['api/**/*.js'],
-    },
-  },
-});
-```
