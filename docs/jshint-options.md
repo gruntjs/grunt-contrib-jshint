@@ -1,6 +1,6 @@
 # Options
 
-Any specified option will be passed through directly to [JSHint][], thus you can specify any option that JSHint supports. See the [JSHint documentation][] for a list of supported options.
+Any specified option will be passed through directly to [JSHint][], thus you can specify any option that JSHint supports. See the [JSHint documentation][] for a list of supported options. Any exclusions defined within `.jshintignore` will also be respected. The `.jshintignore` file should be in the same directory as your `Gruntfile.js`.
 
 [JSHint]: http://www.jshint.com/
 [JSHint documentation]: http://www.jshint.com/docs/
