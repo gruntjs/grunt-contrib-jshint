@@ -19,6 +19,14 @@ module.exports = function(grunt) {
       force: false
     });
 
+    // Report JSHint errors but dont fail the task
+    var force = options.force;
+    delete options.force;
+
+    // Configure reporters
+    var reporters = options.reporters;
+    delete options.reporters;
+
     // Read JSHint options from a specified jshintrc file.
     if (options.jshintrc) {
       options = grunt.file.readJSON(options.jshintrc);
@@ -38,18 +46,40 @@ module.exports = function(grunt) {
     var globals = options.globals;
     delete options.globals;
 
-    // Report JSHint errors but dont fail the task
-    var force = options.force;
-    delete options.force;
-
     grunt.verbose.writeflags(options, 'JSHint options');
     grunt.verbose.writeflags(globals, 'JSHint globals');
 
     // Lint specified files.
     var files = this.filesSrc;
+    var errors = [];
+    var data = [];
+
     files.forEach(function(filepath) {
-      jshint.lint(grunt.file.read(filepath), options, globals, filepath);
+      var results = jshint.lint(grunt.file.read(filepath), options, globals, filepath);
+
+      // Collect errors and data for reporters.
+      results.errors.forEach(function(err) {
+        if (err) {
+          errors.push({file: filepath, error: err});
+        }
+      });
+      if (results.data) {
+        results.data.file = filepath;
+        data.push(results.data);
+      }
     });
+
+    // Run reporters
+    var reporterOptions = {verbose: grunt.option('verbose')};
+    if (reporters && grunt.util._.isArray(reporters)) {
+      reporters.forEach(function(r) {
+        var report = jshint.runReporter(r.name, errors, data, reporterOptions);
+
+        if (report) {
+          grunt.file.write(r.dest, report);
+        }
+      });
+    }
 
     // Fail task if errors were logged except if force was set.
     if (this.errorCount) { return force; }

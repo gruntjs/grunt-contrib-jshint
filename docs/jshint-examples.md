@@ -63,3 +63,24 @@ grunt.initConfig({
   },
 });
 ```
+
+## Specifying reporters
+
+In this example, three jshint reporters are specified. Output from the `checkstyle` reporter will be written into `report/jshint_checkstyle.xml` and similar with `jslint`. The last reporters is a custom reporter, which is defined in the module `path/to/myreporter.js`.
+
+```js
+// Project configuration.
+grunt.initConfig({
+  jshint: {
+    options: {
+      jshintrc: '.jshintrc',
+      reporters: [
+        {name: 'checkstyle', dest: 'report/jshint_checkstyle.xml'},
+        {name: 'jslint', dest: 'report/jslint.xml'},
+        {name: 'path/to/myreporter.js', dest: 'report/jshint_myreporter.json'},
+      ]
+    },
+    all: 'lib/**/*.js'
+  }
+});
+```

@@ -36,3 +36,18 @@ Type: `Boolean`
 Default value: `false`
 
 Set `force` to `true` to report JSHint errors but not fail the task.
+
+## reporters
+Type: `Array`
+Default value: `null`
+
+If the reporters option is specified, the grunt jshint task is able to use all of the reporters provided by jshint.
+
+For the current jshint version, the following reporters are supported:
+
+* checkstyle
+* jslint
+
+For an explanation of those reporters, [check the jshint docs](http://www.jshint.com/docs/), section Usage/--reporter.
+
+Additionally, your own reporters can be specified as a path to their module. They should follow the [jshint reporter specifications](http://www.jshint.com/docs/reporter/).

@@ -10,6 +10,10 @@
 
 // External libs.
 var jshint = require('jshint').JSHINT;
+var path = require('path');
+
+// Internal libs.
+var memoryStream = require('./memorystream');
 
 exports.init = function(grunt) {
   var exports = {};
@@ -110,6 +114,40 @@ exports.init = function(grunt) {
       }
     });
     grunt.log.writeln();
+
+    return {errors: jshint.errors, data: jshint.data()};
+  };
+
+  // Run jshint or 3rd party reporter on results and write to file.
+  exports.runReporter = function(name, errors, data, options) {
+    var reporter;
+    if (name === 'jslint') {
+      name = 'jshint/src/reporters/jslint_xml.js';
+    } else if (name === 'checkstyle') {
+      name = 'jshint/src/reporters/checkstyle.js';
+    } else {
+      name = path.resolve(process.cwd(), name);
+    }
+
+    try {
+      reporter = require(name).reporter;
+    } catch (err) {
+      grunt.log.error("Can't load reporter file: " + name);
+      return;
+    }
+
+    // Override process.stdout temporarely, since reporters write directly to it.
+    var oldStdout = process.stdout;
+    var stream = memoryStream();
+    process.__defineGetter__('stdout', function() { return stream; });
+
+    try {
+      reporter(errors, data, options);
+      return stream.toBuffer();
+    } finally {
+      // Make sure we clean up the stdout.
+      process.__defineGetter__('stdout', function() { return oldStdout; });
+    }
   };
 
   return exports;
