@@ -67,7 +67,7 @@ exports.init = function(grunt) {
     if (result) {
       // Success!
       grunt.verbose.ok();
-      return;
+      return {errors: [], data: jshint.data()};
     }
     // Something went wrong.
     grunt.verbose.or.write(msg);
