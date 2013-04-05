@@ -134,15 +134,16 @@ grunt.initConfig({
 
 ## Release History
 
- * 2013-03-12   v0.3.0   Bump to JSHint 1.1.0. Add force option to report JSHint errors but not fail the task. Add error/warning code to message. Allow task level options to override jshintrc file.
- * 2013-02-25   v0.2.0   Bump to JSHint 1.0
- * 2013-02-14   v0.1.1   First official release for Grunt 0.4.0.
- * 2013-01-17   v0.1.1rc6   Updating grunt/gruntplugin dependencies to rc6. Changing in-development grunt/gruntplugin dependency versions from tilde version ranges to specific versions.
- * 2013-01-08   v0.1.1rc5   Updating to work with grunt v0.4.0rc5. Switching to this.filesSrc api.
- * 2012-10-17   v0.1.0   Work in progress, not yet officially released.
+ * 2013-04-04   v0.4.0   Revert task level options to override jshintrc files.
+ * 2013-03-13   v0.3.0   Bump to JSHint 1.1.0. Add force option to report JSHint errors but not fail the task. Add error/warning code to message. Allow task level options to override jshintrc file.
+ * 2013-02-26   v0.2.0   Bump to JSHint 1.0
+ * 2013-02-15   v0.1.1   First official release for Grunt 0.4.0.
+ * 2013-01-18   v0.1.1rc6   Updating grunt/gruntplugin dependencies to rc6. Changing in-development grunt/gruntplugin dependency versions from tilde version ranges to specific versions.
+ * 2013-01-09   v0.1.1rc5   Updating to work with grunt v0.4.0rc5. Switching to this.filesSrc api.
+ * 2012-10-18   v0.1.0   Work in progress, not yet officially released.
 
 ---
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Wed Mar 13 2013 21:52:51.*
+*This file was generated on Thu Apr 04 2013 21:33:36.*

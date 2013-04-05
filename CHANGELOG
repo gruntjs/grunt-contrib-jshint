@@ -1,3 +1,7 @@
+v0.4.0:
+  date: 2013-04-04
+  changes:
+    - Revert task level options to override jshintrc files.
 v0.3.0:
   date: 2013-03-13
   changes:
