@@ -134,6 +134,7 @@ grunt.initConfig({
 
 ## Release History
 
+ * 2013-04-06   v0.4.1   Fix to allow object type for deprecated predef.
  * 2013-04-04   v0.4.0   Revert task level options to override jshintrc files.
  * 2013-03-13   v0.3.0   Bump to JSHint 1.1.0. Add force option to report JSHint errors but not fail the task. Add error/warning code to message. Allow task level options to override jshintrc file.
  * 2013-02-26   v0.2.0   Bump to JSHint 1.0
@@ -146,4 +147,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Thu Apr 04 2013 21:33:36.*
+*This file was generated on Sat Apr 06 2013 22:25:05.*

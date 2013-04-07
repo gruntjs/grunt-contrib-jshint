@@ -1,3 +1,7 @@
+v0.4.1:
+  date: 2013-04-06
+  changes:
+    - Fix to allow object type for deprecated predef.
 v0.4.0:
   date: 2013-04-04
   changes:

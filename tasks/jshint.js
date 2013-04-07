@@ -27,8 +27,11 @@ module.exports = function(grunt) {
     if (!options.globals) {
       options.globals = {};
     }
-    // Convert deprecated "predef" array into globals.
+    // Convert deprecated "predef" array|object into globals.
     if (options.predef) {
+      if (options.predef === Object(options.predef)) {
+        options.predef = Object.keys(options.predef);
+      }
       options.predef.forEach(function(key) {
         options.globals[key] = true;
       });
