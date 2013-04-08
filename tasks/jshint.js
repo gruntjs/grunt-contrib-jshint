@@ -19,6 +19,10 @@ module.exports = function(grunt) {
       force: false
     });
 
+    // Report JSHint errors but dont fail the task
+    var force = options.force;
+    delete options.force;
+
     // Read JSHint options from a specified jshintrc file.
     if (options.jshintrc) {
       options = grunt.file.readJSON(options.jshintrc);
@@ -40,10 +44,6 @@ module.exports = function(grunt) {
     // Extract globals from options.
     var globals = options.globals;
     delete options.globals;
-
-    // Report JSHint errors but dont fail the task
-    var force = options.force;
-    delete options.force;
 
     grunt.verbose.writeflags(options, 'JSHint options');
     grunt.verbose.writeflags(globals, 'JSHint globals');
