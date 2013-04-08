@@ -1,3 +1,7 @@
+v0.4.2:
+  date: 2013-04-08
+  changes:
+    - Avoid wiping force option when jshintrc is used.
 v0.4.1:
   date: 2013-04-06
   changes:
