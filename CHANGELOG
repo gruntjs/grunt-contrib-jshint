@@ -1,3 +1,7 @@
+v0.4.3:
+  date: 2013-04-08
+  changes:
+    - Fix evaluation of predef option when it's an object.
 v0.4.2:
   date: 2013-04-08
   changes:

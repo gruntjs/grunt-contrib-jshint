@@ -134,6 +134,7 @@ grunt.initConfig({
 
 ## Release History
 
+ * 2013-04-08   v0.4.3   Fix evaluation of predef option when it's an object.
  * 2013-04-08   v0.4.2   Avoid wiping force option when jshintrc is used.
  * 2013-04-06   v0.4.1   Fix to allow object type for deprecated predef.
  * 2013-04-04   v0.4.0   Revert task level options to override jshintrc files.
@@ -148,4 +149,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Mon Apr 08 2013 14:53:42.*
+*This file was generated on Mon Apr 08 2013 21:43:19.*
