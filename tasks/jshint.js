@@ -33,7 +33,7 @@ module.exports = function(grunt) {
     }
     // Convert deprecated "predef" array|object into globals.
     if (options.predef) {
-      if (options.predef === Object(options.predef)) {
+      if (!Array.isArray(options.predef) && typeof options.predef === "object") {
         options.predef = Object.keys(options.predef);
       }
       options.predef.forEach(function(key) {
