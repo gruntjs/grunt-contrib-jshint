@@ -25,7 +25,8 @@ module.exports = function(grunt) {
 
     // Read JSHint options from a specified jshintrc file.
     if (options.jshintrc) {
-      options = grunt.file.readJSON(options.jshintrc);
+      options = this.options(grunt.file.readJSON(options.jshintrc));
+      delete options.jshintrc;
     }
     // If globals weren't specified, initialize them as an empty object.
     if (!options.globals) {
