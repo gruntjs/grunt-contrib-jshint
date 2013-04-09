@@ -12,6 +12,7 @@ module.exports = function(grunt) {
 
   // Internal lib.
   var jshint = require('./lib/jshint').init(grunt);
+  var cli = require('jshint/src/cli/cli');
 
   grunt.registerMultiTask('jshint', 'Validate files with JSHint.', function() {
     // Merge task-specific and/or target-specific options with these defaults.
@@ -50,7 +51,7 @@ module.exports = function(grunt) {
 
     // Lint specified files.
     var files = this.filesSrc;
-    files.forEach(function(filepath) {
+    cli.gather({ args: files, extensions: "" }).forEach(function(filepath) {
       jshint.lint(grunt.file.read(filepath), options, globals, filepath);
     });
 
