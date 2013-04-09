@@ -17,12 +17,17 @@ module.exports = function(grunt) {
   grunt.registerMultiTask('jshint', 'Validate files with JSHint.', function() {
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
-      force: false
+      force: false,
+      'extra-ext': ''
     });
 
     // Report JSHint errors but dont fail the task
     var force = options.force;
     delete options.force;
+
+    // Are extra extension defined?
+    var extensions = options['extra-ext'];
+    delete options['extra-ext'];
 
     // Read JSHint options from a specified jshintrc file.
     if (options.jshintrc) {
@@ -51,7 +56,7 @@ module.exports = function(grunt) {
 
     // Lint specified files.
     var files = this.filesSrc;
-    cli.gather({ args: files, extensions: "" }).forEach(function(filepath) {
+    cli.gather({ args: files, extensions: extensions }).forEach(function(filepath) {
       jshint.lint(grunt.file.read(filepath), options, globals, filepath);
     });
 

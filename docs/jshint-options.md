@@ -36,3 +36,9 @@ Type: `Boolean`
 Default value: `false`
 
 Set `force` to `true` to report JSHint errors but not fail the task.
+
+## extra-ext
+Type: `String`
+Default value: `""`
+
+A list of non-dot-js extensions to lint. You never need to supply `js` as it is always assumed.

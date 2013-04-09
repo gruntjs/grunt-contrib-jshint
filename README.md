@@ -28,7 +28,7 @@ _Run this task with the `grunt jshint` command._
 Task targets, files and options may be specified according to the grunt [Configuring tasks](http://gruntjs.com/configuring-tasks) guide.
 ### Options
 
-Any specified option will be passed through directly to [JSHint][], thus you can specify any option that JSHint supports. See the [JSHint documentation][] for a list of supported options.
+Any specified option will be passed through directly to [JSHint][], thus you can specify any option that JSHint supports. See the [JSHint documentation][] for a list of supported options. Any exclusions defined within `.jshintignore` will also be respected. The `.jshintignore` file should be in the same directory as your `Gruntfile.js`.
 
 [JSHint]: http://www.jshint.com/
 [JSHint documentation]: http://www.jshint.com/docs/
@@ -64,6 +64,12 @@ Type: `Boolean`
 Default value: `false`
 
 Set `force` to `true` to report JSHint errors but not fail the task.
+
+#### extra-ext
+Type: `String`
+Default value: `""`
+
+A list of non-dot-js extensions to lint. You never need to supply `js` as it is always assumed.
 
 ### Usage examples
 
@@ -148,4 +154,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Mon Apr 08 2013 14:53:42.*
+*This file was generated on Tue Apr 09 2013 20:44:31.*
