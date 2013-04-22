@@ -36,3 +36,11 @@ Type: `Boolean`
 Default value: `false`
 
 Set `force` to `true` to report JSHint errors but not fail the task.
+
+## reporter
+Type: `String`
+Default value: `null`
+
+Allows you to modify this plugins output. By default it will use a built-in Grunt reporter. Set the path to your own custom reporter or to one of the built-in JSHint reporters: `jslint` or `checkstyle`.
+
+See also: [Writing your own JSHint reporter.](http://jshint.com/docs/reporter/)

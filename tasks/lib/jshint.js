@@ -8,11 +8,14 @@
 
 'use strict';
 
-// External libs.
+var path = require('path');
 var jshint = require('jshint').JSHINT;
+var jshintcli = require('jshint/src/cli/cli');
 
 exports.init = function(grunt) {
-  var exports = {};
+  var exports = {
+    usingGruntReporter: false
+  };
 
   // No idea why JSHint treats tabs as options.indent # characters wide, but it
   // does. See issue: https://github.com/jshint/jshint/issues/430
@@ -31,45 +34,75 @@ exports.init = function(grunt) {
 
   var tabregex = /\t/g;
 
-  // Lint source code with JSHint.
-  exports.lint = function(src, options, globals, extraMsg) {
-    // JSHint sometimes modifies objects you pass in, so clone them.
-    options = options ? grunt.util._.clone(options) : {};
-    globals = globals ? grunt.util._.clone(globals) : {};
-    // Enable/disable debugging if option explicitly set.
-    if (grunt.option('debug') !== undefined) {
-      options.devel = options.debug = grunt.option('debug');
-      // Tweak a few things.
-      if (grunt.option('debug')) {
-        options.maxerr = Infinity;
+  // Select a reporter (if not using the default Grunt reporter)
+  // Copied from jshint/src/cli/cli.js until that part is exposed
+  exports.selectReporter = function(options) {
+    switch (true) {
+    // JSLint reporter
+    case options.reporter === 'jslint':
+    case options['jslint-reporter']:
+      options.reporter = 'jshint/src/reporters/jslint_xml.js';
+      break;
+
+    // CheckStyle (XML) reporter
+    case options.reporter === 'checkstyle':
+    case options['checkstyle-reporter']:
+      options.reporter = 'jshint/src/reporters/checkstyle.js';
+      break;
+
+    // Reporter that displays additional JSHint data
+    case options['show-non-errors']:
+      options.reporter = 'jshint/src/reporters/non_error.js';
+      break;
+
+    // Custom reporter
+    case options.reporter !== undefined:
+      options.reporter = path.resolve(process.cwd(), options.reporter);
+    }
+
+    var reporter;
+    if (options.reporter) {
+      try {
+        reporter = require(options.reporter).reporter;
+        exports.usingGruntReporter = false;
+      } catch (err) {
+        grunt.fatal(err);
       }
     }
-    var msg = 'Linting' + (extraMsg ? ' ' + extraMsg : '') + '...';
+
+    // Use the default Grunt reporter if none are found
+    if (!reporter) {
+      reporter = exports.reporter;
+      exports.usingGruntReporter = true;
+    }
+
+    return reporter;
+  };
+
+  // Default Grunt JSHint reporter
+  exports.reporter = function(results, data) {
+    var msg = 'Linting' + (data[0].file ? ' ' + data[0].file : '') + '...';
     grunt.verbose.write(msg);
-    // Tab size as reported by JSHint.
-    var tabstr = getTabStr(options);
-    var placeholderregex = new RegExp(tabstr, 'g');
-    // Lint.
-    var result = jshint(src, options || {}, globals || {});
-    // Attempt to work around JSHint erroneously reporting bugs.
-    // if (!result) {
-    //   // Filter out errors that shouldn't be reported.
-    //   jshint.errors = jshint.errors.filter(function(o) {
-    //     return o && o.something === 'something';
-    //   });
-    //   // If no errors are left, JSHint actually succeeded.
-    //   result = jshint.errors.length === 0;
-    // }
-    if (result) {
+
+    if (results.length === 0) {
       // Success!
       grunt.verbose.ok();
       return;
     }
+
+    var options = data[0].options;
+
+    // Tab size as reported by JSHint.
+    var tabstr = getTabStr(options);
+    var placeholderregex = new RegExp(tabstr, 'g');
+
     // Something went wrong.
     grunt.verbose.or.write(msg);
     grunt.log.error();
+
     // Iterate over all errors.
-    jshint.errors.forEach(function(e) {
+    results.forEach(function(result) {
+      var e = result.error;
       // Sometimes there's no error object.
       if (!e) { return; }
       var pos;
@@ -110,6 +143,52 @@ exports.init = function(grunt) {
       }
     });
     grunt.log.writeln();
+  };
+
+  // Run JSHint on the given files with the given options
+  exports.lint = function(files, options, done) {
+    // A list of non-dot-js extensions to check
+    var extraExt = options['extra-ext'] || 'js';
+    delete options['extra-ext'];
+
+    // Select a reporter to use
+    var reporter = exports.selectReporter(options);
+
+    // Read JSHint options from a specified jshintrc file.
+    if (options.jshintrc) {
+      options = grunt.file.readJSON(options.jshintrc);
+    }
+
+    grunt.verbose.writeflags(options, 'JSHint options');
+
+    // Enable/disable debugging if option explicitly set.
+    if (grunt.option('debug') !== undefined) {
+      options.devel = options.debug = grunt.option('debug');
+      // Tweak a few things.
+      if (grunt.option('debug')) {
+        options.maxerr = Infinity;
+      }
+    }
+
+    // Run JSHint on each file and collect results/data
+    var allResults = [];
+    var allData = [];
+    grunt.util.async.forEach(files, function(filepath, next) {
+      jshintcli.run({
+        args: [filepath],
+        extensions: extraExt,
+        config: options,
+        reporter: function(results, data) {
+          reporter(results, data);
+          allResults = allResults.concat(results);
+          allData = allData.concat(data);
+          next();
+        },
+        verbose: grunt.option('verbose')
+      });
+    }, function() {
+      done(allResults, allData);
+    });
   };
 
   return exports;
