@@ -25,6 +25,13 @@ module.exports = function(grunt) {
           {src: '<%= nodeunit.tests %>'},
         ]
       },
+      withReporterShouldFail: {
+        options: {
+          force: true,
+          reporter: 'checkstyle',
+        },
+        src: ['test/fixtures/missingsemicolon.js'],
+      },
       options: {
         jshintrc: '.jshintrc',
       }
@@ -44,7 +51,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-internal');
 
   // Whenever the "test" task is run, run the "nodeunit" task.
-  grunt.registerTask('test', ['nodeunit']);
+  grunt.registerTask('test', ['jshint', 'nodeunit']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['jshint', 'test', 'build-contrib']);

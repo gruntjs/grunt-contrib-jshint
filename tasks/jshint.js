@@ -26,7 +26,7 @@ module.exports = function(grunt) {
 
     jshint.lint(this.filesSrc, options, function(results, data) {
       var failed = 0;
-      if (grunt.fail.errorcount > 0) {
+      if (results.length > 0) {
         // Fail task if errors were logged except if force was set.
         failed = force;
       } else {
