@@ -16,31 +16,31 @@ module.exports = function(grunt) {
       all_files: [
         'Gruntfile.js',
         'tasks/**/*.js',
-        '<%= nodeunit.tests %>'
+        '<%= nodeunit.tests %>',
       ],
       individual_files: {
         files: [
           {src: 'Gruntfile.js'},
           {src: 'tasks/**/*.js'},
           {src: '<%= nodeunit.tests %>'},
-        ]
+        ],
       },
       withReporterShouldFail: {
         options: {
-          force: true,
           reporter: 'checkstyle',
+          reporterOutput: 'tmp/report.xml',
         },
         src: ['test/fixtures/missingsemicolon.js'],
       },
       options: {
         jshintrc: '.jshintrc',
-      }
+      },
     },
 
     // Unit tests.
     nodeunit: {
-      tests: ['test/*_test.js']
-    }
+      tests: ['test/*_test.js'],
+    },
   });
 
   // Actually load this plugin's task(s).
@@ -54,6 +54,6 @@ module.exports = function(grunt) {
   grunt.registerTask('test', ['jshint', 'nodeunit']);
 
   // By default, lint and run all tests.
-  grunt.registerTask('default', ['jshint', 'test', 'build-contrib']);
+  grunt.registerTask('default', ['test', 'build-contrib']);
 
 };

@@ -76,6 +76,12 @@ exports.jshint = {
       test.done();
     });
   },
+  reporterOutput: function(test) {
+    test.expect(1);
+    var result = grunt.file.read(path.join('tmp', 'report.xml'));
+    test.ok(result.indexOf('<file name="test/fixtures/missingsemicolon.js">') !== -1, 'Should have reported errors with the checkstyle reporter.');
+    test.done();
+  },
   dontBlowUp: function(test) {
     test.expect(1);
     var files = [path.join(fixtures, 'lint.txt')];

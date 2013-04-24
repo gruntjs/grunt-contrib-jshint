@@ -76,6 +76,12 @@ Allows you to modify this plugins output. By default it will use a built-in Grun
 
 See also: [Writing your own JSHint reporter.](http://jshint.com/docs/reporter/)
 
+#### reporterOutput
+Type: `String`
+Default value: `null`
+
+Specify a filepath to output the results of a reporter. If `reporterOutput` is specified then all output will be written to the given filepath instead of printed to stdout.
+
 ### Usage examples
 
 #### Wildcards
@@ -160,4 +166,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Mon Apr 22 2013 13:26:59.*
+*This file was generated on Wed Apr 24 2013 15:35:43.*
