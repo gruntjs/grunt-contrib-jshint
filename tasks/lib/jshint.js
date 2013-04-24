@@ -153,6 +153,7 @@ exports.init = function(grunt) {
 
     // Select a reporter to use
     var reporter = exports.selectReporter(options);
+    delete options.reporter;
 
     // Read JSHint options from a specified jshintrc file.
     if (options.jshintrc) {
