@@ -62,6 +62,8 @@ If this filename is specified, options and globals defined therein will be used.
 }
 ```
 
+*Be aware that `jshintrc` settings are not merged with your Grunt options.*
+
 #### force
 Type: `Boolean`
 Default value: `false`
@@ -166,4 +168,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Wed Apr 24 2013 15:35:43.*
+*This file was generated on Tue May 07 2013 12:55:24.*

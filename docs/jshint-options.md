@@ -31,6 +31,8 @@ If this filename is specified, options and globals defined therein will be used.
 }
 ```
 
+*Be aware that `jshintrc` settings are not merged with your Grunt options.*
+
 ## force
 Type: `Boolean`
 Default value: `false`
