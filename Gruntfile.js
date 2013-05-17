@@ -13,12 +13,12 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     jshint: {
-      all_files: [
+      allFiles: [
         'Gruntfile.js',
         'tasks/**/*.js',
         '<%= nodeunit.tests %>',
       ],
-      individual_files: {
+      individualFiles: {
         files: [
           {src: 'Gruntfile.js'},
           {src: 'tasks/**/*.js'},
@@ -31,6 +31,9 @@ module.exports = function(grunt) {
           reporterOutput: 'tmp/report.xml',
         },
         src: ['test/fixtures/missingsemicolon.js'],
+      },
+      ignoresSupport: {
+        src: ['test/fixtures/dontlint.txt'],
       },
       options: {
         jshintrc: '.jshintrc',

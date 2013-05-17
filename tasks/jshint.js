@@ -47,7 +47,7 @@ module.exports = function(grunt) {
         // Fail task if errors were logged except if force was set.
         failed = force;
       } else {
-        if (jshint.usingGruntReporter === true) {
+        if (jshint.usingGruntReporter === true && data.length > 1) {
           grunt.log.ok(data.length + ' file' + (data.length === 1 ? '' : 's') + ' lint free.');
         }
       }

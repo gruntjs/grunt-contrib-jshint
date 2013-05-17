@@ -81,6 +81,11 @@ exports.init = function(grunt) {
 
   // Default Grunt JSHint reporter
   exports.reporter = function(results, data) {
+    if (data.length < 1) {
+      grunt.log.error('0 files linted. Please check your ignored files.');
+      return;
+    }
+
     var msg = 'Linting' + (data[0].file ? ' ' + data[0].file : '') + '...';
     grunt.verbose.write(msg);
 
@@ -147,9 +152,25 @@ exports.init = function(grunt) {
 
   // Run JSHint on the given files with the given options
   exports.lint = function(files, options, done) {
+    var cliOptions = {
+      verbose: grunt.option('verbose'),
+      extensions: '',
+    };
+
     // A list of non-dot-js extensions to check
-    var extraExt = options['extra-ext'] || 'js';
-    delete options['extra-ext'];
+    if (options.extensions) {
+      cliOptions.extensions = options.extensions;
+      delete options.extensions;
+    }
+
+    // A list ignored files
+    if (options.ignores) {
+      if (typeof options.ignores === 'string') {
+        options.ignores = [options.ignores];
+      }
+      cliOptions.ignores = options.ignores;
+      delete options.ignores;
+    }
 
     // Select a reporter to use
     var reporter = exports.selectReporter(options);
@@ -158,9 +179,8 @@ exports.init = function(grunt) {
     // Read JSHint options from a specified jshintrc file.
     if (options.jshintrc) {
       options = grunt.file.readJSON(options.jshintrc);
+      delete options.jshintrc;
     }
-
-    grunt.verbose.writeflags(options, 'JSHint options');
 
     // Enable/disable debugging if option explicitly set.
     if (grunt.option('debug') !== undefined) {
@@ -171,22 +191,22 @@ exports.init = function(grunt) {
       }
     }
 
+    cliOptions.config = options;
+    grunt.verbose.writeflags(options, 'JSHint options');
+
     // Run JSHint on each file and collect results/data
     var allResults = [];
     var allData = [];
     grunt.util.async.forEach(files, function(filepath, next) {
-      jshintcli.run({
-        args: [filepath],
-        extensions: extraExt,
-        config: options,
-        reporter: function(results, data) {
-          reporter(results, data);
-          allResults = allResults.concat(results);
-          allData = allData.concat(data);
-          next();
-        },
-        verbose: grunt.option('verbose')
-      });
+      var cliopts = grunt.util._.clone(cliOptions);
+      cliopts.args = [filepath];
+      cliopts.reporter = function(results, data) {
+        reporter(results, data);
+        allResults = allResults.concat(results);
+        allData = allData.concat(data);
+        next();
+      };
+      jshintcli.run(cliopts);
     }, function() {
       done(allResults, allData);
     });
