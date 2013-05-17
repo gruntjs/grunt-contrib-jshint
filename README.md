@@ -1,4 +1,4 @@
-# grunt-contrib-jshint [![Build Status](https://secure.travis-ci.org/gruntjs/grunt-contrib-jshint.png?branch=master)](http://travis-ci.org/gruntjs/grunt-contrib-jshint)
+# grunt-contrib-jshint [![Build Status](https://travis-ci.org/gruntjs/grunt-contrib-jshint.png?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-jshint)
 
 > Validate files with JSHint.
 
@@ -63,6 +63,18 @@ If this filename is specified, options and globals defined therein will be used.
 ```
 
 *Be aware that `jshintrc` settings are not merged with your Grunt options.*
+
+#### extensions
+Type: `String`
+Default value: `''`
+
+A list of non-dot-js extensions to check.
+
+#### ignores
+Type: `Array`
+Default value: `null`
+
+A list of files and dirs to ignore. This will override your `.jshintignore` file if set and does not merge.
 
 #### force
 Type: `Boolean`
@@ -153,6 +165,7 @@ grunt.initConfig({
 
 ## Release History
 
+ * 2013-05-17   v0.5.0   Bump to jshint 2.0. Add support for .jshintignore files and ignores option Add support for extensions option. Add support for custom reporters and output report to a file.
  * 2013-04-08   v0.4.3   Fix evaluation of predef option when it's an object.
  * 2013-04-08   v0.4.2   Avoid wiping force option when jshintrc is used.
  * 2013-04-06   v0.4.1   Fix to allow object type for deprecated predef.
@@ -168,4 +181,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Tue May 07 2013 12:55:24.*
+*This file was generated on Fri May 17 2013 13:52:11.*

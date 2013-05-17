@@ -1,3 +1,10 @@
+v0.5.0:
+  date: 2013-05-17
+  changes:
+    - Bump to jshint 2.0.
+    - Add support for .jshintignore files and ignores option
+    - Add support for extensions option.
+    - Add support for custom reporters and output report to a file.
 v0.4.3:
   date: 2013-04-08
   changes:
