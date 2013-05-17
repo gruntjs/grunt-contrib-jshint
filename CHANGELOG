@@ -1,3 +1,7 @@
+v0.5.1:
+  date: 2013-05-17
+  changes:
+    - Fix for when only 1 file is lint free.
 v0.5.0:
   date: 2013-05-17
   changes:
