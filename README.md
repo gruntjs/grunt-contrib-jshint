@@ -165,6 +165,7 @@ grunt.initConfig({
 
 ## Release History
 
+ * 2013-05-19   v0.5.3   [object Object]
  * 2013-05-18   v0.5.2   Fix printing too many erroneous ignored file errors.
  * 2013-05-17   v0.5.1   Fix for when only 1 file is lint free.
  * 2013-05-17   v0.5.0   Bump to jshint 2.0. Add support for .jshintignore files and ignores option Add support for extensions option. Add support for custom reporters and output report to a file.
@@ -183,4 +184,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Sat May 18 2013 20:24:33.*
+*This file was generated on Sun May 19 2013 20:55:24.*

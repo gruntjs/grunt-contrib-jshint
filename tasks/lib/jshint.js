@@ -83,6 +83,7 @@ exports.init = function(grunt) {
   exports.reporter = function(results, data) {
     // Dont report empty data as its an ignored file
     if (data.length < 1) {
+      grunt.log.error('0 files linted. Please check your ignored files.');
       return;
     }
 
@@ -194,22 +195,18 @@ exports.init = function(grunt) {
     cliOptions.config = options;
     grunt.verbose.writeflags(options, 'JSHint options');
 
-    // Run JSHint on each file and collect results/data
+    // Run JSHint on all file and collect results/data
     var allResults = [];
     var allData = [];
-    grunt.util.async.forEach(files, function(filepath, next) {
-      var cliopts = grunt.util._.clone(cliOptions);
-      cliopts.args = [filepath];
-      cliopts.reporter = function(results, data) {
-        reporter(results, data);
-        allResults = allResults.concat(results);
-        allData = allData.concat(data);
-        next();
-      };
-      jshintcli.run(cliopts);
-    }, function() {
-      done(allResults, allData);
-    });
+    var cliopts = grunt.util._.clone(cliOptions);
+    cliopts.args = files;
+    cliopts.reporter = function(results, data) {
+      reporter(results, data);
+      allResults = allResults.concat(results);
+      allData = allData.concat(data);
+    };
+    jshintcli.run(cliopts);
+    done(allResults, allData);
   };
 
   return exports;

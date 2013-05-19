@@ -109,4 +109,19 @@ exports.jshint = {
       test.done();
     });
   },
+  singleReportCall: function(test) {
+    test.expect(2);
+
+    // stub jshint.reporter
+    var reporterCallCount = 0;
+    var _report = jshint.reporter;
+    jshint.reporter = function() { reporterCallCount++; };
+
+    var files = [path.join(fixtures, 'dontlint.txt'), path.join(fixtures, 'lint.txt')];
+    jshint.lint(files, {}, function(results, data) {
+      test.equal(data.length, 1, 'Should not have linted a file listed in the .jshintignore.');
+      test.equal(reporterCallCount, 1, 'Should have called the reporter once.');
+      test.done();
+    });
+  }
 };

@@ -1,3 +1,7 @@
+v0.5.3:
+  date: 2013-05-19
+  changes:
+    - Performance: Execute the reporter once rather than per file.
 v0.5.2:
   date: 2013-05-18
   changes:
