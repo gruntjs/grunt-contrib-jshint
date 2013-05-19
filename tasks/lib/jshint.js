@@ -81,8 +81,8 @@ exports.init = function(grunt) {
 
   // Default Grunt JSHint reporter
   exports.reporter = function(results, data) {
+    // Dont report empty data as its an ignored file
     if (data.length < 1) {
-      grunt.log.error('0 files linted. Please check your ignored files.');
       return;
     }
 

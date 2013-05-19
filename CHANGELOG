@@ -1,3 +1,7 @@
+v0.5.2:
+  date: 2013-05-18
+  changes:
+    - Fix printing too many erroneous ignored file errors.
 v0.5.1:
   date: 2013-05-17
   changes:

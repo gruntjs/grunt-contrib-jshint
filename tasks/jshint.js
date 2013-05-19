@@ -47,8 +47,12 @@ module.exports = function(grunt) {
         // Fail task if errors were logged except if force was set.
         failed = force;
       } else {
-        if (jshint.usingGruntReporter === true && data.length > 0) {
-          grunt.log.ok(data.length + ' file' + (data.length === 1 ? '' : 's') + ' lint free.');
+        if (jshint.usingGruntReporter === true) {
+          if (data.length < 1) {
+            grunt.log.error('0 files linted. Please check your ignored files.');
+          } else {
+            grunt.log.ok(data.length + ' file' + (data.length === 1 ? '' : 's') + ' lint free.');
+          }
         }
       }
 
