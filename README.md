@@ -165,6 +165,7 @@ grunt.initConfig({
 
 ## Release History
 
+ * 2013-05-22   v0.5.4   Fix default reporter to show offending file.
  * 2013-05-19   v0.5.3   [object Object]
  * 2013-05-18   v0.5.2   Fix printing too many erroneous ignored file errors.
  * 2013-05-17   v0.5.1   Fix for when only 1 file is lint free.
@@ -184,4 +185,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Sun May 19 2013 20:55:24.*
+*This file was generated on Wed May 22 2013 10:12:36.*

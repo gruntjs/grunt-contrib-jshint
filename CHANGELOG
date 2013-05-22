@@ -1,3 +1,7 @@
+v0.5.4:
+  date: 2013-05-22
+  changes:
+    - Fix default reporter to show offending file.
 v0.5.3:
   date: 2013-05-19
   changes:
