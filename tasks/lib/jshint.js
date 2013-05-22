@@ -87,9 +87,6 @@ exports.init = function(grunt) {
       return;
     }
 
-    var msg = 'Linting' + (data[0].file ? ' ' + data[0].file : '') + '...';
-    grunt.verbose.write(msg);
-
     if (results.length === 0) {
       // Success!
       grunt.verbose.ok();
@@ -102,12 +99,16 @@ exports.init = function(grunt) {
     var tabstr = getTabStr(options);
     var placeholderregex = new RegExp(tabstr, 'g');
 
-    // Something went wrong.
-    grunt.verbose.or.write(msg);
-    grunt.log.error();
-
     // Iterate over all errors.
     results.forEach(function(result) {
+      // Display the defending file
+      var msg = 'Linting' + (result.file ? ' ' + result.file : '') + '...';
+      grunt.verbose.write(msg);
+
+      // Something went wrong.
+      grunt.verbose.or.write(msg);
+      grunt.log.error();
+
       var e = result.error;
       // Sometimes there's no error object.
       if (!e) { return; }
