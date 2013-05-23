@@ -96,6 +96,13 @@ Default value: `null`
 
 Specify a filepath to output the results of a reporter. If `reporterOutput` is specified then all output will be written to the given filepath instead of printed to stdout.
 
+
+#### failWithReporterOutput
+Type: `Boolean`
+Default value: `false`
+
+Allows you to specify if linting errors should fail the build task, along with outputting the results to a report file. 
+
 ### Usage examples
 
 #### Wildcards
