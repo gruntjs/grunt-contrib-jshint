@@ -63,3 +63,26 @@ grunt.initConfig({
   },
 });
 ```
+
+## Ignoring specific warnings
+
+If you would like to ignore a specific warning:
+
+```shell
+[L24:C9] W015: Expected '}' to have an indentation at 11 instead at 9.
+```
+
+You can toggle it by prepending `-` to the warning id as an option:
+
+```js
+grunt.initConfig({
+  jshint: {
+    ignore_warning: {
+      options: {
+        '-W015': true,
+      },
+      src: ['**/*.js'],
+    },
+  },
+});
+```
