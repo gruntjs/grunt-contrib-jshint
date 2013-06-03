@@ -188,6 +188,7 @@ grunt.initConfig({
 
 ## Release History
 
+ * 2013-06-02   v0.6.0   Dont always succeed the task when using a custom reporter. Bump jshint to 2.1.3.
  * 2013-05-22   v0.5.4   Fix default reporter to show offending file.
  * 2013-05-19   v0.5.3   [object Object]
  * 2013-05-18   v0.5.2   Fix printing too many erroneous ignored file errors.
@@ -208,4 +209,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Thu May 23 2013 21:54:28.*
+*This file was generated on Sun Jun 02 2013 20:02:26.*
