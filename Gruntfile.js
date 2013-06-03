@@ -29,6 +29,7 @@ module.exports = function(grunt) {
         options: {
           reporter: 'checkstyle',
           reporterOutput: 'tmp/report.xml',
+          force: true,
         },
         src: ['test/fixtures/missingsemicolon.js'],
       },

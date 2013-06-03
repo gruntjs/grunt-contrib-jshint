@@ -62,7 +62,6 @@ module.exports = function(grunt) {
         }
         grunt.file.write(reporterOutput, output);
         grunt.log.ok('Report "' + reporterOutput + '" created.');
-        failed = 0;
       }
 
       done(failed);
