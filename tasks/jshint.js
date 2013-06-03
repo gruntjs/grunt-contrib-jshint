@@ -20,6 +20,7 @@ module.exports = function(grunt) {
     var options = this.options({
       force: false,
       reporterOutput: null,
+      failWithReporterOutput: false
     });
 
     // Report JSHint errors but dont fail the task
@@ -29,6 +30,9 @@ module.exports = function(grunt) {
     // Whether to output the report to a file
     var reporterOutput = options.reporterOutput;
     delete options.reporterOutput;
+
+    var failWithReporterOutput = options.failWithReporterOutput;
+    delete options.failWithReporterOutput;
 
     // Hook into stdout to capture report
     var output = '';
@@ -62,7 +66,9 @@ module.exports = function(grunt) {
         }
         grunt.file.write(reporterOutput, output);
         grunt.log.ok('Report "' + reporterOutput + '" created.');
-        failed = 0;
+        if(!failWithReporterOutput) {
+          failed = 0;
+        }
       }
 
       done(failed);
