@@ -194,7 +194,6 @@ exports.init = function(grunt) {
     }
 
     cliOptions.config = options;
-    grunt.verbose.writeflags(options, 'JSHint options');
 
     // Run JSHint on all file and collect results/data
     var allResults = [];
