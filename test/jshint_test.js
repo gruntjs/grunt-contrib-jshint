@@ -49,6 +49,18 @@ exports.jshint = {
       test.done();
     });
   },
+  overrideJshintrc: function(test) {
+    test.expect(1);
+    var files = [path.join(fixtures, 'nocurly.js')];
+    var options = {
+      jshintrc: path.join(__dirname, '..', '.jshintrc'),
+      curly: false
+    };
+    jshint.lint(files, options, function(results, data) {
+      test.ok(results.length === 0, 'Should override jshintrc options');
+      test.done();
+    });
+  },
   defaultReporter: function(test) {
     test.expect(2);
     grunt.log.muted = false;

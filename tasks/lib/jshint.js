@@ -11,6 +11,7 @@
 var path = require('path');
 var jshint = require('jshint').JSHINT;
 var jshintcli = require('jshint/src/cli/cli');
+var _ = require('lodash');
 
 exports.init = function(grunt) {
   var exports = {
@@ -180,8 +181,9 @@ exports.init = function(grunt) {
 
     // Read JSHint options from a specified jshintrc file.
     if (options.jshintrc) {
-      options = grunt.file.readJSON(options.jshintrc);
+      options = _.extend(grunt.file.readJSON(options.jshintrc), options);
       delete options.jshintrc;
+      
     }
 
     // Enable/disable debugging if option explicitly set.
