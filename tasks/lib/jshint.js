@@ -31,7 +31,26 @@ exports.init = function(grunt) {
     // placeholder. \uFFFF repeated 2+ times.
     return tabsize > 1 && grunt.util.repeat(tabsize, '\uFFFF');
   };
-
+  
+  var mergeRecursive = function (obj1, obj2) {
+    for (var p in obj2) {
+      if (obj2.hasOwnProperty(p)) {
+        try {
+          // Property in destination object set; update its value.
+          if (obj2[p].constructor === Object) {
+            obj1[p] = mergeRecursive(obj1[p], obj2[p]);
+          } else {
+            obj1[p] = obj2[p];
+          }
+        } catch(e) {
+          // Property in destination object not set; create it and set its value.
+          obj1[p] = obj2[p];
+        }
+      }
+    }
+    return obj1;
+  };
+  
   var tabregex = /\t/g;
 
   // Select a reporter (if not using the default Grunt reporter)
@@ -180,7 +199,7 @@ exports.init = function(grunt) {
 
     // Read JSHint options from a specified jshintrc file.
     if (options.jshintrc) {
-      options = grunt.file.readJSON(options.jshintrc);
+      options = mergeRecursive(options, grunt.file.readJSON(options.jshintrc));
       delete options.jshintrc;
     }
 
