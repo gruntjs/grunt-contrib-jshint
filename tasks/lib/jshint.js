@@ -180,8 +180,8 @@ exports.init = function(grunt) {
 
     // Read JSHint options from a specified jshintrc file.
     if (options.jshintrc) {
-      options = grunt.file.readJSON(options.jshintrc);
-      delete options.jshintrc;
+      options = grunt.file.read(options.jshintrc);
+      options = JSON.parse(options.replace(/\/\/.*/g, ''));
     }
 
     // Enable/disable debugging if option explicitly set.
