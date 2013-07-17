@@ -102,7 +102,7 @@ exports.init = function(grunt) {
     // Iterate over all errors.
     results.forEach(function(result) {
       // Display the defending file
-      var msg = 'Linting' + (result.file ? ' ' + result.file : '') + '...';
+      var msg = 'Linting' + (result.file ? ' ' + result.file : '') + ' ...';
       grunt.verbose.write(msg);
 
       // Something went wrong.
