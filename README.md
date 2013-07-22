@@ -185,6 +185,21 @@ grunt.initConfig({
 });
 ```
 
+#### Ignoring specific files
+
+Occasionally application files and third party libraries share the same directory.  To exclude third party code, but include all current and future application files, use a glob for `files` and specifically exclude libraries using `ignores`.  In this example, the jQuery file is matched by the glob but subsequently ignored when JSHint does its analysis.
+
+```js
+grunt.initConfig({
+    jshint: {
+        files: ['js/*.js'],
+        options: {
+            ignores: ['js/jquery.js']
+        }
+    }
+});
+```
+
 
 ## Release History
 
@@ -209,4 +224,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Sun Jun 02 2013 20:02:26.*
+*This file was generated on Mon Jul 22 2013 10:57:04.*
