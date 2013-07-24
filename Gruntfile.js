@@ -36,6 +36,9 @@ module.exports = function(grunt) {
       ignoresSupport: {
         src: ['test/fixtures/dontlint.txt'],
       },
+      options: {
+        jshintrc: '.jshintrc',
+      },
     },
 
     // Unit tests.
