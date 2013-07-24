@@ -205,7 +205,7 @@ grunt.initConfig({
 
  * 2013-06-02   v0.6.0   Dont always succeed the task when using a custom reporter. Bump jshint to 2.1.3.
  * 2013-05-22   v0.5.4   Fix default reporter to show offending file.
- * 2013-05-19   v0.5.3   [object Object]
+ * 2013-05-19   v0.5.3   Performance: Execute the reporter once rather than per file.
  * 2013-05-18   v0.5.2   Fix printing too many erroneous ignored file errors.
  * 2013-05-17   v0.5.1   Fix for when only 1 file is lint free.
  * 2013-05-17   v0.5.0   Bump to jshint 2.0. Add support for .jshintignore files and ignores option Add support for extensions option. Add support for custom reporters and output report to a file.
@@ -224,4 +224,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Mon Jul 22 2013 10:57:04.*
+*This file was generated on Wed Jul 24 2013 09:25:28.*
