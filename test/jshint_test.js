@@ -53,7 +53,9 @@ exports.jshint = {
     test.expect(2);
     grunt.log.muted = false;
     var files = [path.join(fixtures, 'nodemodule.js')];
-    var options = {};
+    var options = {
+      jshintrc: path.join(__dirname, 'fixtures', '.empty_jshintrc')
+    };
     stdoutEqual(function() {
       jshint.lint(files, options, function(results, data) {});
     }, function(result) {
@@ -66,7 +68,9 @@ exports.jshint = {
     test.expect(3);
     grunt.log.muted = false;
     var files = [path.join(fixtures, 'nodemodule.js'), path.join(fixtures, 'missingsemicolon.js')];
-    var options = {};
+    var options = {
+      jshintrc: path.join(__dirname, 'fixtures', '.empty_jshintrc')
+    };
     stdoutEqual(function() {
       jshint.lint(files, options, function(results, data) {});
     }, function(result) {

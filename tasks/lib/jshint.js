@@ -179,9 +179,12 @@ exports.init = function(grunt) {
     delete options.reporter;
 
     // Read JSHint options from a specified jshintrc file.
+    var defaultJshintrc = path.join(process.cwd(), '.jshintrc');
     if (options.jshintrc) {
       options = grunt.file.readJSON(options.jshintrc);
       delete options.jshintrc;
+    } else if (grunt.file.exists(defaultJshintrc)) {
+      options = grunt.file.readJSON(defaultJshintrc);
     }
 
     // Enable/disable debugging if option explicitly set.
