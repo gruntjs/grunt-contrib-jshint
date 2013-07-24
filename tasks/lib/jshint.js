@@ -176,7 +176,13 @@ exports.init = function(grunt) {
 
     // Select a reporter to use
     var reporter = exports.selectReporter(options);
-    delete options.reporter;
+
+    // Remove bad options that may have came in from the cli
+    ['reporter', 'jslint-reporter', 'checkstyle-reporter', 'show-non-errors'].forEach(function(opt) {
+      if (options.hasOwnProperty(opt)) {
+        delete options[opt];
+      }
+    });
 
     // Read JSHint options from a specified jshintrc file.
     var defaultJshintrc = path.join(process.cwd(), '.jshintrc');
