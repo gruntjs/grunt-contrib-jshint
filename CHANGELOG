@@ -1,3 +1,7 @@
+v0.6.1:
+  date: 2013-07-27
+  changes:
+    - Peg jshint to 2.1.4 until breaking changes in 2.1.5 are fixed.
 v0.6.0:
   date: 2013-06-02
   changes:
