@@ -203,6 +203,7 @@ grunt.initConfig({
 
 ## Release History
 
+ * 2013-07-29   v0.6.2   Update to jshint 2.1.7.
  * 2013-07-27   v0.6.1   Peg jshint to 2.1.4 until breaking changes in 2.1.5 are fixed.
  * 2013-06-02   v0.6.0   Dont always succeed the task when using a custom reporter. Bump jshint to 2.1.3.
  * 2013-05-22   v0.5.4   Fix default reporter to show offending file.
@@ -225,4 +226,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Sat Jul 27 2013 21:54:01.*
+*This file was generated on Mon Jul 29 2013 17:08:08.*
