@@ -203,6 +203,7 @@ grunt.initConfig({
 
 ## Release History
 
+ * 2013-08-11   v0.6.3   Update to jshint 2.1.9.
  * 2013-07-29   v0.6.2   Update to jshint 2.1.7.
  * 2013-07-27   v0.6.1   Peg jshint to 2.1.4 until breaking changes in 2.1.5 are fixed.
  * 2013-06-02   v0.6.0   Dont always succeed the task when using a custom reporter. Bump jshint to 2.1.3.
