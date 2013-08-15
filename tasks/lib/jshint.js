@@ -10,7 +10,7 @@
 
 var path = require('path');
 var jshint = require('jshint').JSHINT;
-var jshintcli = require('jshint/src/cli/cli');
+var jshintcli = require('jshint/src/cli');
 
 exports.init = function(grunt) {
   var exports = {
