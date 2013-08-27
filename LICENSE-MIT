@@ -1,5 +1,35 @@
 Copyright (c) 2013 "Cowboy" Ben Alman, contributors
 
+------------------------------------------------------------------
+
+IMPORTANT: grunt-contrib-jshint (the glue code for executing
+JSHint from Grunt) is covered by the MIT license terms below.
+
+JSHint itself is obviously essential to use grunt-contrib-jshint.
+
+JSHint is covered by a more restrictive license which has been
+determined to be be non-free and is therefore unsuitable for
+inclusion in larger projects that are released under a free
+license or a committment to use only free software.  Projects
+like Debian and Fedora are in this category.
+
+Any composite product produced by or including JSHint is licensed
+under the composition of the strictest terms in all relevant
+licenses.  Where the licenses of two products contain terms
+that contradict each other, the licenses are incompatible and
+the products can't be used or distributed together.
+
+In particular,
+
+- any user or distributor of grunt-contrib-jshint is also
+  bound by the "No Evil" clause in JSHint
+
+- Anybody using or distributing a GPL licensed library as part of a
+  composite piece of work can't use or distribute JSHint with it and
+  therefore can't use/distribute grunt-contrib-jshint either
+
+------------------------------------------------------------------
+
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
 files (the "Software"), to deal in the Software without
