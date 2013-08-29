@@ -1,4 +1,4 @@
-# grunt-contrib-jshint [![Build Status](https://travis-ci.org/gruntjs/grunt-contrib-jshint.png?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-jshint)
+# grunt-contrib-jshint v0.6.4 [![Build Status](https://travis-ci.org/gruntjs/grunt-contrib-jshint.png?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-jshint)
 
 > Validate files with JSHint.
 
@@ -203,6 +203,7 @@ grunt.initConfig({
 
 ## Release History
 
+ * 2013-08-29   v0.6.4   jshintrc now loaded by jshint allowing comments.
  * 2013-08-15   v0.6.3   Fix module location for jshint 2.1.10.
  * 2013-07-29   v0.6.2   Update to jshint 2.1.7.
  * 2013-07-27   v0.6.1   Peg jshint to 2.1.4 until breaking changes in 2.1.5 are fixed.
@@ -227,4 +228,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Thu Aug 15 2013 16:23:56.*
+*This file was generated on Thu Aug 29 2013 08:46:48.*
