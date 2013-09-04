@@ -186,7 +186,7 @@ exports.init = function(grunt) {
 
     // Read JSHint options from a specified jshintrc file.
     if (options.jshintrc) {
-      options = jshintcli.loadConfig(options.jshintrc);
+      options = grunt.util._.defaults(options, jshintcli.loadConfig(options.jshintrc));
       delete options.jshintrc;
     }
 
