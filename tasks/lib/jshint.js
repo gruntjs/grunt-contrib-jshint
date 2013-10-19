@@ -184,22 +184,24 @@ exports.init = function(grunt) {
       }
     });
 
-    // Read JSHint options from a specified jshintrc file.
-    if (options.jshintrc) {
-      options = jshintcli.loadConfig(options.jshintrc);
-      delete options.jshintrc;
-    }
-
-    // Enable/disable debugging if option explicitly set.
-    if (grunt.option('debug') !== undefined) {
-      options.devel = options.debug = grunt.option('debug');
-      // Tweak a few things.
-      if (grunt.option('debug')) {
-        options.maxerr = Infinity;
+    if (options.jshintrc === true) {
+      // let jshint find the options itself
+      delete cliOptions.config;
+    } else if (options.jshintrc) {
+      // Read JSHint options from a specified jshintrc file.
+      cliOptions.config = jshintcli.loadConfig(options.jshintrc);
+    } else {
+      // Enable/disable debugging if option explicitly set.
+      if (grunt.option('debug') !== undefined) {
+        options.devel = options.debug = grunt.option('debug');
+        // Tweak a few things.
+        if (grunt.option('debug')) {
+          options.maxerr = Infinity;
+        }
       }
+      // pass all of the remaining options directly to jshint
+      cliOptions.config = options;
     }
-
-    cliOptions.config = options;
 
     // Run JSHint on all file and collect results/data
     var allResults = [];

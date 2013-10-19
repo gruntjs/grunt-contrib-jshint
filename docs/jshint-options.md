@@ -14,10 +14,12 @@ Default value: `null`
 A map of global variables, with keys as names and a boolean value to determine if they are assignable. This is not a standard JSHint option, but is passed into the `JSHINT` function as its third argument. See the [JSHint documentation][] for more information.
 
 ## jshintrc
-Type: `String`
+Type: `String` or `true`
 Default value: `null`
 
-If this filename is specified, options and globals defined therein will be used. The `jshintrc` file must be valid JSON and looks something like this:
+If set to `true`, no config will be sent to jshint and jshint will search for `.jshintrc` files relative to the flies being linted.
+
+If a filename is specified, options and globals defined therein will be used. The `jshintrc` file must be valid JSON and looks something like this:
 
 ```json
 {
