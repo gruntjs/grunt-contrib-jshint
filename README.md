@@ -1,4 +1,4 @@
-# grunt-contrib-jshint v0.6.5 [![Build Status](https://travis-ci.org/gruntjs/grunt-contrib-jshint.png?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-jshint)
+# grunt-contrib-jshint v0.7.0 [![Build Status](https://travis-ci.org/gruntjs/grunt-contrib-jshint.png?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-jshint)
 
 > Validate files with JSHint.
 
@@ -203,6 +203,7 @@ grunt.initConfig({
 
 ## Release History
 
+ * 2013-10-23   v0.7.0   Update to jshint 2.3.0.
  * 2013-10-23   v0.6.5   Fix output when maxerr is low.
  * 2013-08-29   v0.6.4   jshintrc now loaded by jshint allowing comments.
  * 2013-08-15   v0.6.3   Fix module location for jshint 2.1.10.
@@ -229,4 +230,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Wed Oct 23 2013 20:33:11.*
+*This file was generated on Wed Oct 23 2013 20:35:54.*
