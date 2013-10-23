@@ -1,7 +1,7 @@
 {
   "name": "grunt-contrib-jshint",
   "description": "Validate files with JSHint.",
-  "version": "0.6.4",
+  "version": "0.6.5-pre",
   "homepage": "https://github.com/gruntjs/grunt-contrib-jshint",
   "author": {
     "name": "Grunt Team",
@@ -27,15 +27,15 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "jshint": "~2.1.10"
+    "jshint": "~2.3.0"
   },
   "devDependencies": {
-    "grunt-contrib-nodeunit": "~0.1.2",
+    "grunt-contrib-nodeunit": "~0.2.2",
     "grunt-contrib-internal": "~0.4.6",
-    "grunt": "~0.4.0"
+    "grunt": "~0.4.1"
   },
   "peerDependencies": {
-    "grunt": "~0.4.0"
+    "grunt": "~0.4.1"
   },
   "keywords": [
     "gruntplugin"
