@@ -20,8 +20,10 @@ exports.init = function(grunt) {
   // No idea why JSHint treats tabs as options.indent # characters wide, but it
   // does. See issue: https://github.com/jshint/jshint/issues/430
   var getTabStr = function(options) {
+    options = options ? grunt.util._.clone(options) : {};
+    options.maxerr = 50;
     // Do something that's going to error.
-    jshint('\tx', options || {});
+    jshint('\tx', options);
     // If an error occurred, figure out what character JSHint reported and
     // subtract one.
     var character = jshint.errors && jshint.errors[0] && jshint.errors[0].character - 1;
