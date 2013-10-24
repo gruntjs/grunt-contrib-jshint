@@ -1,3 +1,7 @@
+v0.6.5:
+  date: 2013-09-21
+  changes:
+    - jshint updated to 2.3.0.
 v0.6.4:
   date: 2013-08-29
   changes:
