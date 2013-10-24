@@ -96,6 +96,12 @@ Default value: `null`
 
 Specify a filepath to output the results of a reporter. If `reporterOutput` is specified then all output will be written to the given filepath instead of printed to stdout.
 
+#### reporterOutputMessage
+Type: `String`
+Default value: `Report <%= grunt.task.current.options.data.reporterOutput %> created.`
+
+Specify a custom message to be printed when the report is done. This is for example useful for hooking into CI report importers such as [Teamcity's](http://confluence.jetbrains.com/display/TCD8/Build+Script+Interaction+with+TeamCity#BuildScriptInteractionwithTeamCity-ImportingXMLReports)
+
 ### Usage examples
 
 #### Wildcards

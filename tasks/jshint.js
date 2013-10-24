@@ -20,6 +20,7 @@ module.exports = function(grunt) {
     var options = this.options({
       force: false,
       reporterOutput: null,
+      reporterOutputMessage: 'Report <%= grunt.task.current.options.data.reporterOutput %> created.'
     });
 
     // log (verbose) options before hooking in the reporter
@@ -32,6 +33,11 @@ module.exports = function(grunt) {
     // Whether to output the report to a file
     var reporterOutput = options.reporterOutput;
     delete options.reporterOutput;
+
+    // The message to output when the report is written to file
+    // Can be used to customise done message for CI report importers such as Teamcity's
+    var reporterOutputMessage = options.reporterOutputMessage;
+    delete options.reporterOutputMessage;
 
     // Hook into stdout to capture report
     var output = '';
@@ -64,7 +70,7 @@ module.exports = function(grunt) {
           grunt.file.mkdir(destDir);
         }
         grunt.file.write(reporterOutput, output);
-        grunt.log.ok('Report "' + reporterOutput + '" created.');
+        grunt.log.ok(reporterOutputMessage);
       }
 
       done(failed);
