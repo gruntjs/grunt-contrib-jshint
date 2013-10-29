@@ -49,6 +49,17 @@ exports.jshint = {
       test.done();
     });
   },
+  passTheJshintrcBuck: function(test) {
+    test.expect(1);
+    var files = [path.join(fixtures, 'nodemodule.js')];
+    var options = {
+      jshintrc: true
+    };
+    jshint.lint(files, options, function(results, data) {
+      test.ok(results.length === 0, 'Should not have reported any errors, .jshintrc must not have been found');
+      test.done();
+    });
+  },
   defaultReporter: function(test) {
     test.expect(2);
     grunt.log.muted = false;
