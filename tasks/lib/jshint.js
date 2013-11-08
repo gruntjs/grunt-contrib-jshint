@@ -101,15 +101,19 @@ exports.init = function(grunt) {
     var tabstr = getTabStr(options);
     var placeholderregex = new RegExp(tabstr, 'g');
 
+    var lastfile = null;
     // Iterate over all errors.
     results.forEach(function(result) {
       // Display the defending file
       var msg = 'Linting' + (result.file ? ' ' + result.file : '') + ' ...';
       grunt.verbose.write(msg);
 
-      // Something went wrong.
-      grunt.verbose.or.write(msg);
-      grunt.log.error();
+      // Only print file name once per error
+      if (result.file !== lastfile) {
+        grunt.verbose.or.write(msg);
+        grunt.log.error();
+      }
+      lastfile = result.file;
 
       var e = result.error;
       // Sometimes there's no error object.
