@@ -39,5 +39,6 @@
   },
   "keywords": [
     "gruntplugin"
-  ]
+  ],
+  "main": "tasks/jshint.js"
 }
