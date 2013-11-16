@@ -1,3 +1,7 @@
+v0.7.2:
+  date: 2013-11-16
+  changes:
+    - Only print file name once per error.
 v0.7.1:
   date: 2013-10-31
   changes:
