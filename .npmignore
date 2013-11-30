@@ -1,0 +1,6 @@
+/docs/
+/test/
+.jshintignore
+.jshintrc
+.travis.yml
+Gruntfile.js
