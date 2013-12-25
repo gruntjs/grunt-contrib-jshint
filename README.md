@@ -1,4 +1,4 @@
-# grunt-contrib-jshint v0.7.2 [![Build Status](https://travis-ci.org/gruntjs/grunt-contrib-jshint.png?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-jshint)
+# grunt-contrib-jshint v0.7.3 [![Build Status](https://travis-ci.org/gruntjs/grunt-contrib-jshint.png?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-jshint)
 
 > Validate files with JSHint.
 
@@ -190,6 +190,7 @@ grunt.initConfig({
 
 ## Release History
 
+ * 2013-12-25   v0.7.3   Update to jshint 2.4.0.
  * 2013-11-16   v0.7.2   Only print file name once per error.
  * 2013-10-31   v0.7.1   Ability to set jshintrc option to true to use jshint's native ability for finding .jshintrc files relative to the linted files.
  * 2013-10-23   v0.7.0   Update to jshint 2.3.0.
@@ -219,4 +220,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Sun Dec 15 2013 09:23:14.*
+*This file was generated on Wed Dec 25 2013 13:26:47.*
