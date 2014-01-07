@@ -148,5 +148,17 @@ exports.jshint = {
       test.equal(reporterCallCount, 1, 'Should have called the reporter once.');
       test.done();
     });
+  },
+  extractOption: function(test) {
+    test.expect(2);
+    var files = [path.join(fixtures, 'extract.html')];
+    var options = {
+      extract: 'always'
+    };
+    jshint.lint(files, options, function(results, data) {
+      test.equal(results[0].error.reason, 'Missing semicolon.', 'Should reporter a missing semicolon.');
+      test.equal(results.length, 1, 'Should report only one.');
+      test.done();
+    });
   }
 };
