@@ -180,6 +180,12 @@ exports.init = function(grunt) {
       delete options.ignores;
     }
 
+    // Option to extract JS from HTML file
+    if (options.extract) {
+      cliOptions.extract = options.extract;
+      delete options.extract;
+    }
+
     // Select a reporter to use
     var reporter = exports.selectReporter(options);
 
