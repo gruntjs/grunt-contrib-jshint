@@ -47,9 +47,19 @@ module.exports = function(grunt) {
       if (results.length > 0) {
         // Fail task if errors were logged except if force was set.
         failed = force;
+        if (jshint.usingGruntReporter === true) {
+
+          var numErrors = grunt.util._.reduce(results,function(memo,result){
+            return memo + (result.error ? 1 : 0);
+          },0);
+
+          var numFiles = data.length;
+          grunt.log.error(numErrors + ' ' + grunt.util.pluralize(numErrors,'error/errors') + ' in ' +
+                          numFiles + ' ' + grunt.util.pluralize(numFiles,'file/files'));
+        }
       } else {
         if (jshint.usingGruntReporter === true && data.length > 0) {
-          grunt.log.ok(data.length + ' file' + (data.length === 1 ? '' : 's') + ' lint free.');
+          grunt.log.ok(data.length + ' ' + grunt.util.pluralize(data.length,'file/files') + ' lint free.');
         }
       }
 
