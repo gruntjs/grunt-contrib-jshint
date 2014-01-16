@@ -34,7 +34,7 @@ exports.jshint = {
     var files = [path.join(fixtures, 'missingsemicolon.js')];
     var options = {};
     jshint.lint(files, options, function(results, data) {
-      test.equal(results[0].error.reason, 'Missing semicolon.', 'Should reporter a missing semicolon.');
+      test.equal(results[0].error.reason, 'Missing semicolon.', 'Should report a missing semicolon.');
       test.done();
     });
   },
@@ -156,7 +156,7 @@ exports.jshint = {
       extract: 'always'
     };
     jshint.lint(files, options, function(results, data) {
-      test.equal(results[0].error.reason, 'Missing semicolon.', 'Should reporter a missing semicolon.');
+      test.equal(results[0].error.reason, 'Missing semicolon.', 'Should report a missing semicolon.');
       test.equal(results.length, 1, 'Should report only one.');
       test.done();
     });
