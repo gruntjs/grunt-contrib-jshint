@@ -30,7 +30,7 @@
     "jshint": "~2.4.0"
   },
   "devDependencies": {
-    "grunt-contrib-nodeunit": "~0.1.2",
+    "grunt-contrib-nodeunit": "~0.2.2",
     "grunt-contrib-internal": "~0.4.6",
     "grunt": "~0.4.0"
   },
