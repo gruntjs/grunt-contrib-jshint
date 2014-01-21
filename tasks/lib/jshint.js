@@ -20,7 +20,7 @@ exports.init = function(grunt) {
   // No idea why JSHint treats tabs as options.indent # characters wide, but it
   // does. See issue: https://github.com/jshint/jshint/issues/430
   var getTabStr = function(options) {
-    options = options ? grunt.util._.clone(options) : {};
+    options = options ? Object.create(options) : {};
     options.maxerr = 50;
     // Do something that's going to error.
     jshint('\tx', options);
@@ -218,14 +218,13 @@ exports.init = function(grunt) {
     // Run JSHint on all file and collect results/data
     var allResults = [];
     var allData = [];
-    var cliopts = grunt.util._.clone(cliOptions);
-    cliopts.args = files;
-    cliopts.reporter = function(results, data) {
+    cliOptions.args = files;
+    cliOptions.reporter = function(results, data) {
       reporter(results, data);
       allResults = allResults.concat(results);
       allData = allData.concat(data);
     };
-    jshintcli.run(cliopts);
+    jshintcli.run(cliOptions);
     done(allResults, allData);
   };
 
