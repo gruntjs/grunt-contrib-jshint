@@ -73,6 +73,17 @@ Allows you to modify this plugins output. By default it will use a built-in Grun
 
 See also: [Writing your own JSHint reporter.](http://jshint.com/docs/reporters/)
 
+You can also use an external reporter. For example [jshint-stylish](https://github.com/sindresorhus/jshint-stylish):
+
+```
+$ npm install --save-dev jshint-stylish
+```
+
+```js
+options: {
+    reporter: require('jshint-stylish')
+}
+```
 
 ## reporterOutput
 
