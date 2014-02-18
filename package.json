@@ -27,7 +27,8 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "jshint": "~2.4.0"
+    "jshint": "~2.4.0",
+    "hooker": "~0.2.3"
   },
   "devDependencies": {
     "grunt-contrib-nodeunit": "~0.3.1",

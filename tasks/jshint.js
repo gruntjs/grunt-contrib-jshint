@@ -11,6 +11,7 @@
 module.exports = function(grunt) {
 
   var path = require('path');
+  var hooker = require('hooker');
   var jshint = require('./lib/jshint').init(grunt);
 
   grunt.registerMultiTask('jshint', 'Validate files with JSHint.', function() {
@@ -33,10 +34,10 @@ module.exports = function(grunt) {
     // Hook into stdout to capture report
     var output = '';
     if (reporterOutput) {
-      grunt.util.hooker.hook(process.stdout, 'write', {
+      hooker.hook(process.stdout, 'write', {
         pre: function(out) {
           output += out;
-          return grunt.util.hooker.preempt();
+          return hooker.preempt();
         }
       });
     }
@@ -54,7 +55,7 @@ module.exports = function(grunt) {
 
       // Write the output of the reporter if wanted
       if (reporterOutput) {
-        grunt.util.hooker.unhook(process.stdout, 'write');
+        hooker.unhook(process.stdout, 'write');
         reporterOutput = grunt.template.process(reporterOutput);
         var destDir = path.dirname(reporterOutput);
         if (!grunt.file.exists(destDir)) {
