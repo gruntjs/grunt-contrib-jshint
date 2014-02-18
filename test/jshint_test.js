@@ -2,12 +2,12 @@
 
 var path = require('path');
 var grunt = require('grunt');
+var hooker = require('hooker');
 var jshint = require('../tasks/lib/jshint').init(grunt);
 
 var fixtures = path.join(__dirname, 'fixtures');
 
 // Helper for testing stdout
-var hooker = grunt.util.hooker;
 var stdoutEqual = function(callback, done) {
   var actual = '';
   // Hook process.stdout.write
