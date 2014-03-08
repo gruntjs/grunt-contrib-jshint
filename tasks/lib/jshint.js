@@ -17,24 +17,12 @@ exports.init = function(grunt) {
     usingGruntReporter: false
   };
 
-  // No idea why JSHint treats tabs as options.indent # characters wide, but it
-  // does. See issue: https://github.com/jshint/jshint/issues/430
-  var getTabStr = function(options) {
-    options = options ? Object.create(options) : {};
-    options.maxerr = 50;
-    // Do something that's going to error.
-    jshint('\tx', options);
-    // If an error occurred, figure out what character JSHint reported and
-    // subtract one.
-    var character = jshint.errors && jshint.errors[0] && jshint.errors[0].character - 1;
-    // If character is actually a number, use it. Otherwise use 1.
-    var tabsize = isNaN(character) ? 1 : character;
-    // If tabsize > 1, return something that should be safe to use as a
-    // placeholder. \uFFFF repeated 2+ times.
-    return tabsize > 1 && grunt.util.repeat(tabsize, '\uFFFF');
+  var pad = function(msg,length) {
+    while (msg.length < length) {
+      msg = ' ' + msg;
+    }
+    return msg;
   };
-
-  var tabregex = /\t/g;
 
   // Select a reporter (if not using the default Grunt reporter)
   // Copied from jshint/src/cli/cli.js until that part is exposed
@@ -97,59 +85,38 @@ exports.init = function(grunt) {
 
     var options = data[0].options;
 
-    // Tab size as reported by JSHint.
-    var tabstr = getTabStr(options);
-    var placeholderregex = new RegExp(tabstr, 'g');
+    grunt.log.writeln();
 
     var lastfile = null;
     // Iterate over all errors.
     results.forEach(function(result) {
-      // Display the defending file
-      var msg = 'Linting' + (result.file ? ' ' + result.file : '') + ' ...';
-      grunt.verbose.write(msg);
 
       // Only print file name once per error
       if (result.file !== lastfile) {
-        grunt.verbose.or.write(msg);
-        grunt.log.error();
+        grunt.log.writeln((result.file ? '   ' + result.file : '').bold);
       }
       lastfile = result.file;
 
       var e = result.error;
+
       // Sometimes there's no error object.
       if (!e) { return; }
-      var pos;
-      var code = '';
-      var evidence = e.evidence;
-      var character = e.character;
-      if (evidence) {
+
+      if (e.evidence) {
         // Manually increment errorcount since we're not using grunt.log.error().
         grunt.fail.errorcount++;
-        // Descriptive code error.
-        pos = '['.red + ('L' + e.line).yellow + ':'.red + ('C' + character).yellow + ']'.red;
-        if (e.code) {
-          code = e.code.yellow + ':'.red + ' ';
-        }
-        grunt.log.writeln(pos + ' ' + code + e.reason.yellow);
-        // If necessary, eplace each tab char with something that can be
-        // swapped out later.
-        if (tabstr) {
-          evidence = evidence.replace(tabregex, tabstr);
-        }
-        if (character === 0) {
-          // Beginning of line.
-          evidence = '?'.inverse.red + evidence;
-        } else if (character > evidence.length) {
-          // End of line.
-          evidence = evidence + ' '.inverse.red;
-        } else {
-          // Middle of line.
-          evidence = evidence.slice(0, character - 1) + evidence[character - 1].inverse.red +
-            evidence.slice(character);
-        }
-        // Replace tab placeholder (or tabs) but with a 2-space soft tab.
-        evidence = evidence.replace(tabstr ? placeholderregex : tabregex, '  ');
-        grunt.log.writeln(evidence);
+
+        // No idea why JSHint treats tabs as options.indent # characters wide, but it
+        // does. See issue: https://github.com/jshint/jshint/issues/430
+        // Replacing tabs with appropriate spaces (i.e. columns) ensures that
+        // caret will line up correctly.
+        var evidence = e.evidence.replace(/\t/g,grunt.util.repeat(options.indent,' '));
+
+        grunt.log.writeln((pad(e.line.toString(),7) + ' |') + evidence.grey);
+        grunt.log.write(grunt.util.repeat(9,' ') + grunt.util.repeat(e.character -1,' ') + '^ ');
+        grunt.verbose.write('[' + e.code + '] ');
+        grunt.log.writeln(e.reason);
+
       } else {
         // Generic "Whoops, too many errors" error.
         grunt.log.error(e.reason);

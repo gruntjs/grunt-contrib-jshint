@@ -69,7 +69,7 @@ exports.jshint = {
       jshint.lint(files, options, function(results, data) {});
     }, function(result) {
       test.ok(jshint.usingGruntReporter, 'Should be using the default grunt reporter.');
-      test.ok(result.indexOf('[L3:C1] W117: \'module\' is not defined.') !== -1, 'Should have reported errors with the default grunt reporter.');
+      test.ok(result.indexOf('\'module\' is not defined.') !== -1, 'Should have reported errors with the default grunt reporter.');
       test.done();
     });
   },
@@ -82,8 +82,8 @@ exports.jshint = {
       jshint.lint(files, options, function(results, data) {});
     }, function(result) {
       test.ok(jshint.usingGruntReporter, 'Should be using the default grunt reporter.');
-      test.ok(result.match(/nodemodule\.js\s\.\.\.ERROR/g).length === 1, 'Should have reported nodemodule.js only once.');
-      test.ok(result.match(/missingsemicolon\.js\s\.\.\.ERROR/g).length === 1, 'Should have reported missingsemicolon.js only once.');
+      test.ok(result.match(/nodemodule\.js/g).length === 1, 'Should have reported nodemodule.js only once.');
+      test.ok(result.match(/missingsemicolon\.js/g).length === 1, 'Should have reported missingsemicolon.js only once.');
       test.done();
     });
   },
