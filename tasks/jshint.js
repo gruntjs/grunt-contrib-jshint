@@ -29,7 +29,6 @@ module.exports = function(grunt) {
 
     // Whether to output the report to a file
     var reporterOutput = options.reporterOutput;
-    delete options.reporterOutput;
 
     // Hook into stdout to capture report
     var output = '';
