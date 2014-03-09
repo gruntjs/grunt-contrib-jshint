@@ -187,6 +187,10 @@ exports.init = function(grunt) {
     var allData = [];
     cliOptions.args = files;
     cliOptions.reporter = function(results, data) {
+      var fromDir = path.dirname(options.reporterOutput);
+      results.forEach(function(datum) {
+        datum.file = fromDir ? path.relative(fromDir, datum.file) : datum.file;
+      });
       reporter(results, data);
       allResults = allResults.concat(results);
       allData = allData.concat(data);
