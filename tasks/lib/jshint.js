@@ -187,7 +187,7 @@ exports.init = function(grunt) {
     var allData = [];
     cliOptions.args = files;
     cliOptions.reporter = function(results, data) {
-      reporter(results, data);
+      reporter(results, data, options);
       allResults = allResults.concat(results);
       allData = allData.concat(data);
     };
