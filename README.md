@@ -50,7 +50,7 @@ A map of global variables, with keys as names and a boolean value to determine i
 #### jshintrc
 
 Type: `String` or `true`  
-Default: `null`
+Default: `.jshintrc`
 
 If set to `true`, no config will be sent to jshint and jshint will search for `.jshintrc` files relative to the files being linted.
 
