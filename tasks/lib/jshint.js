@@ -191,7 +191,7 @@ exports.init = function(grunt) {
       results.forEach(function(datum) {
         datum.file = fromDir ? path.relative(fromDir, datum.file) : datum.file;
       });
-      reporter(results, data);
+      reporter(results, data, options);
       allResults = allResults.concat(results);
       allData = allData.concat(data);
     };
