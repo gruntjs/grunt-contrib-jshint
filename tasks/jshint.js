@@ -21,6 +21,7 @@ module.exports = function(grunt) {
     var options = this.options({
       force: false,
       reporterOutput: null,
+      jshintrc: '.jshintrc'
     });
 
     // Report JSHint errors but dont fail the task
