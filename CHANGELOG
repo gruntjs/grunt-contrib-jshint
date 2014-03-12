@@ -1,7 +1,11 @@
-v0.9.0-pre:
-  date: 2014-01-27
+v0.9.0:
+  date: 2014-03-12
   changes:
-    - Remove grunt.util._.clone
+    - Replace deprecated grunt.util._.clone with Object.create()
+    - Replace deprecated grunt.util.hooker with hooker lib
+    - Enhancing the readability of the output.
+    - Reporter output is relative to the output file.
+    - Pass jshint options to the external reporter.
 v0.8.0:
   date: 2013-12-25
   changes:
