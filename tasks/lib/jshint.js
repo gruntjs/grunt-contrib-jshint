@@ -153,6 +153,12 @@ exports.init = function(grunt) {
       delete options.extract;
     }
 
+    // Get reporter output directory for relative paths in reporters
+    if (options.reporterOutput) {
+      var reporterOutputDir = path.dirname(options.reporterOutput);
+      delete options.reporterOutput;
+    }
+
     // Select a reporter to use
     var reporter = exports.selectReporter(options);
 
@@ -187,9 +193,8 @@ exports.init = function(grunt) {
     var allData = [];
     cliOptions.args = files;
     cliOptions.reporter = function(results, data) {
-      var fromDir = path.dirname(options.reporterOutput);
       results.forEach(function(datum) {
-        datum.file = fromDir ? path.relative(fromDir, datum.file) : datum.file;
+        datum.file = reporterOutputDir ? path.relative(reporterOutputDir, datum.file) : datum.file;
       });
       reporter(results, data, options);
       allResults = allResults.concat(results);
