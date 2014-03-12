@@ -1,4 +1,4 @@
-# grunt-contrib-jshint v0.9.0 [![Build Status](https://travis-ci.org/gruntjs/grunt-contrib-jshint.png?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-jshint)
+# grunt-contrib-jshint v0.9.1 [![Build Status](https://travis-ci.org/gruntjs/grunt-contrib-jshint.png?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-jshint)
 
 > Validate files with JSHint.
 
@@ -215,6 +215,7 @@ grunt.initConfig({
 
 ## Release History
 
+ * 2014-03-12   v0.9.1   Don't pass reporterOutput option to jshint.
  * 2014-03-12   v0.9.0   Replace deprecated grunt.util._.clone with Object.create() Replace deprecated grunt.util.hooker with hooker lib Enhancing the readability of the output. Reporter output is relative to the output file. Pass jshint options to the external reporter.
  * 2013-12-25   v0.8.0   Update to jshint 2.4.0.
  * 2013-11-16   v0.7.2   Only print file name once per error.
@@ -246,4 +247,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Wed Mar 12 2014 10:07:58.*
+*This file was generated on Wed Mar 12 2014 15:53:34.*
