@@ -23,6 +23,11 @@ module.exports = function(grunt) {
       reporterOutput: null,
     });
 
+    //Put any ignores into our options to pass to jshint#lint.
+    if (this.data.ignores && this.data.ignores.length > 0) {
+      //We do a shallow clone here...though not strictly necessary.
+      options.ignores = this.data.ignores.slice();
+    }
     // Report JSHint errors but dont fail the task
     var force = options.force;
     delete options.force;
