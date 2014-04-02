@@ -104,7 +104,8 @@ exports.jshint = {
   reporterOutput: function(test) {
     test.expect(1);
     var result = grunt.file.read(path.join('tmp', 'report.xml'));
-    test.ok(result.indexOf('<file name="../test/fixtures/missingsemicolon.js">') !== -1, 'Should have reported errors with the checkstyle reporter.');
+    var filename = path.relative('tmp', path.join(fixtures, 'missingsemicolon.js'));
+    test.ok(result.indexOf('<file name="' + filename + '">') !== -1, 'Should have reported errors with the checkstyle reporter.');
     test.done();
   },
   dontBlowUp: function(test) {
