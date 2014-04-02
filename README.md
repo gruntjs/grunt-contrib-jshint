@@ -1,4 +1,4 @@
-# grunt-contrib-jshint v0.9.2 [![Build Status](https://travis-ci.org/gruntjs/grunt-contrib-jshint.png?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-jshint)
+# grunt-contrib-jshint v0.10.0 [![Build Status](https://travis-ci.org/gruntjs/grunt-contrib-jshint.png?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-jshint)
 
 > Validate files with JSHint.
 
@@ -215,6 +215,7 @@ grunt.initConfig({
 
 ## Release History
 
+ * 2014-04-02   v0.10.0   Update to JSHint 2.5.0.
  * 2014-03-12   v0.9.2   Fixes a bug where reporterOutput was still passed to jshint.
  * 2014-03-12   v0.9.1   Don't pass reporterOutput option to jshint.
  * 2014-03-12   v0.9.0   Replace deprecated grunt.util._.clone with Object.create() Replace deprecated grunt.util.hooker with hooker lib Enhancing the readability of the output. Reporter output is relative to the output file. Pass jshint options to the external reporter.
@@ -248,4 +249,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Wed Mar 12 2014 20:05:49.*
+*This file was generated on Wed Apr 02 2014 09:05:43.*
