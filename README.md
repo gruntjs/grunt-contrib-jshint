@@ -1,4 +1,4 @@
-# grunt-contrib-jshint v0.10.0 [![Build Status](https://travis-ci.org/gruntjs/grunt-contrib-jshint.png?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-jshint)
+# grunt-contrib-jshint v0.10.0 [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-jshint.png?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-jshint) <a href="https://ci.appveyor.com/project/gruntjs/grunt-contrib-jshint"><img src="https://ci.appveyor.com/api/projects/status/j04ik7qgx21ixyfw/branch/master" alt="Build Status: Windows" height="18" /></a>
 
 > Validate files with JSHint.
 
@@ -249,4 +249,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Wed Apr 02 2014 09:05:43.*
+*This file was generated on Tue Apr 08 2014 17:30:59.*
