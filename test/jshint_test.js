@@ -161,5 +161,51 @@ exports.jshint = {
       test.equal(results.length, 1, 'Should report only one.');
       test.done();
     });
+  },
+  validJSX: function(test) {
+    test.expect(1);
+    var files = [path.join(fixtures, 'valid.jsx')];
+    var options = {
+      convertJSX: true
+    };
+    jshint.lint(files, options, function(results, data) {
+      test.ok(results.length === 0, 'Should not have reported any errors with supplied .jshintrc');
+      test.done();
+    });
+  },
+  jsxNoConvert: function(test) {
+    test.expect(2);
+    var files = [path.join(fixtures, 'valid.jsx')];
+    var options = {
+    };
+    jshint.lint(files, options, function(results, data) {
+      test.ok(results.length !== 0, 'Should have reported errors');
+      test.equal(results[0].error.reason, 'Expected an identifier and instead saw \'<\'.');
+      test.done();
+    });
+  },
+  missingSemicolonJSX: function(test) {
+    test.expect(2);
+    var files = [path.join(fixtures, 'missingsemicolon.jsx')];
+    var options = {
+      convertJSX: true
+    };
+    jshint.lint(files, options, function(results, data) {
+      test.equal(results[0].error.reason, 'Missing semicolon.', 'Should report a missing semicolon.');
+      test.equal(results.length, 1, 'Should report only one.');
+      test.done();
+    });
+  },
+  invalidJSX: function(test) {
+    test.expect(2);
+    var files = [path.join(fixtures, 'invalid.jsx')];
+    var options = {
+        convertJSX: true
+    };
+    jshint.lint(files, options, function(results, data) {
+      test.ok(results.length !== 0, 'Should have reported errors');
+      test.equal(results[0].error.reason, 'Expected an identifier and instead saw \'<\'.');
+      test.done();
+    });
   }
 };

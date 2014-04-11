@@ -8,9 +8,11 @@
 
 'use strict';
 
+var os = require('os');
 var path = require('path');
 var jshint = require('jshint').JSHINT;
 var jshintcli = require('jshint/src/cli');
+var React = require('react-tools');
 
 exports.init = function(grunt) {
   var exports = {
@@ -188,12 +190,43 @@ exports.init = function(grunt) {
       cliOptions.config = options;
     }
 
+    var tempFiles = {};
+    if (options.convertJSX === true) {
+      // Convert any jsx files into js files, keeping track of the
+      // translation to properly report the original source file and
+      // clean up when finished.
+      files = grunt.util._.map(files, function(file) {
+        if (path.extname(file) === '.jsx') {
+          var jsx = grunt.file.read(file);
+          try {
+            var js = React.transform(jsx);
+            var tmpfile = path.join(os.tmpdir(), 'grunt-jsxhint', file);
+            tempFiles[tmpfile] = file;
+            grunt.file.write(tmpfile, js);
+            return tmpfile;
+          } catch (err) {
+            grunt.log.warn('error converting ' + file + ': ' + err);
+            return file;
+          }
+        } else {
+          return file;
+        }
+      });
+
+      delete options.convertJSX;
+    }
+
     // Run JSHint on all file and collect results/data
     var allResults = [];
     var allData = [];
     cliOptions.args = files;
     cliOptions.reporter = function(results, data) {
       results.forEach(function(datum) {
+        // If the file was converted from jsx, report the error on the
+        // original filename, not the temporary filename.
+        if (tempFiles[datum.file]) {
+          datum.file = tempFiles[datum.file];
+        }
         datum.file = reporterOutputDir ? path.relative(reporterOutputDir, datum.file) : datum.file;
       });
       reporter(results, data, options);
@@ -201,6 +234,18 @@ exports.init = function(grunt) {
       allData = allData.concat(data);
     };
     jshintcli.run(cliOptions);
+
+    // Yuck... need to chdir into the temp directory to avoid warnings
+    // from grunt.file.delete().
+    if (Object.keys(tempFiles).length !== 0) {
+      var cwd = process.cwd();
+      process.chdir(os.tmpdir());
+      grunt.util._.each(tempFiles, function(orig, temp) {
+        grunt.file.delete(temp);
+      });
+      process.chdir(cwd);
+    }
+
     done(allResults, allData);
   };
 
