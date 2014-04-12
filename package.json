@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "jshint": "~2.5.0",
+    "react-tools": "~0.10.0",
     "hooker": "~0.2.3"
   },
   "devDependencies": {
