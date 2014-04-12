@@ -123,6 +123,13 @@ Default: `null`
 
 Specify a filepath to output the results of a reporter. If `reporterOutput` is specified then all output will be written to the given filepath instead of printed to stdout.
 
+#### convertJSX
+
+Type: `Boolean`  
+Default: `false`
+
+Convert [Facebook React](https://github.com/facebook/react) .jsx files into javascript before calling jshint on them.
+
 ### Usage examples
 
 #### Wildcards
