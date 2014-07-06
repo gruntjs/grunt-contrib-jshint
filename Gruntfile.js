@@ -31,7 +31,10 @@ module.exports = function(grunt) {
           reporterOutput: 'tmp/report.xml',
           force: true,
         },
-        src: ['test/fixtures/missingsemicolon.js'],
+        src: [
+          'test/fixtures/missingsemicolon.js',
+          'test/fixtures/wrule.js'
+        ],
       },
       ignoresSupport: {
         src: ['test/fixtures/dontlint.txt'],

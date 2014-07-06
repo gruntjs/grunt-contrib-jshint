@@ -9,5 +9,6 @@
   "undef": true,    // true: Require all non-global variables to be declared (prevents global leaks)
   "boss": true,     // true: Tolerate assignments where comparisons would be expected
   "eqnull": true,   // true: Tolerate use of `== null`
-  "node": true      // Node.js
+  "node": true,     // Node.js
+  "-W117": true     // true: Ignore `not defined` errors as an example of using a rule (W117) by code.
 }
