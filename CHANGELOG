@@ -1,3 +1,7 @@
+v0.11.0:
+  date: 2015-01-22
+  changes:
+    - Update to JSHint ~2.6.0.
 v0.10.0:
   date: 2014-04-02
   changes:
