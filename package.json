@@ -2,18 +2,11 @@
   "name": "grunt-contrib-jshint",
   "description": "Validate files with JSHint.",
   "version": "0.11.0",
-  "homepage": "https://github.com/gruntjs/grunt-contrib-jshint",
   "author": {
     "name": "Grunt Team",
     "url": "http://gruntjs.com/"
   },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/gruntjs/grunt-contrib-jshint.git"
-  },
-  "bugs": {
-    "url": "https://github.com/gruntjs/grunt-contrib-jshint/issues"
-  },
+  "repository": "gruntjs/grunt-contrib-jshint",
   "licenses": [
     {
       "type": "MIT",
@@ -21,30 +14,29 @@
     }
   ],
   "engines": {
-    "node": ">= 0.8.0"
+    "node": ">=0.10.0"
   },
   "scripts": {
     "test": "grunt test"
   },
   "dependencies": {
-    "hooker": "~0.2.3",
-    "jshint": "~2.6.0"
+    "hooker": "^0.2.3",
+    "jshint": "^2.6.0"
   },
   "devDependencies": {
-    "grunt": "~0.4.5",
+    "grunt": "^0.4.5",
     "grunt-cli": "^0.1.13",
-    "grunt-contrib-internal": "~0.4.12",
-    "grunt-contrib-nodeunit": "~0.4.1"
+    "grunt-contrib-internal": "^0.4.12",
+    "grunt-contrib-nodeunit": "^0.4.1"
   },
   "peerDependencies": {
-    "grunt": "~0.4.5"
+    "grunt": ">=0.4.0"
   },
   "keywords": [
     "gruntplugin"
   ],
   "files": [
-    "tasks",
-    "LICENSE-MIT"
+    "tasks"
   ],
   "appveyor_id": "j04ik7qgx21ixyfw"
 }
