@@ -114,7 +114,7 @@ exports.init = function(grunt) {
 
         grunt.log.writeln((pad(e.line.toString(),7) + ' |') + evidence.grey);
         grunt.log.write(grunt.util.repeat(9,' ') + grunt.util.repeat(e.character -1,' ') + '^ ');
-        grunt.verbose.write('[' + e.code + '] ');
+        grunt.log.write('[' + e.code + '] ');
         grunt.log.writeln(e.reason);
 
       } else {
