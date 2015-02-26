@@ -33,7 +33,7 @@ exports.jshint = {
     test.expect(1);
     var files = [path.join(fixtures, 'missingsemicolon.js')];
     var options = {};
-    jshint.lint(files, options, function(results, data) {
+    jshint.lint(files, options, function(results) {
       test.equal(results[0].error.reason, 'Missing semicolon.', 'Should report a missing semicolon.');
       test.done();
     });
@@ -44,7 +44,7 @@ exports.jshint = {
     var options = {
       jshintrc: path.join(__dirname, '..', '.jshintrc')
     };
-    jshint.lint(files, options, function(results, data) {
+    jshint.lint(files, options, function(results) {
       test.ok(results.length === 0, 'Should not have reported any errors with supplied .jshintrc');
       test.done();
     });
@@ -55,7 +55,7 @@ exports.jshint = {
     var options = {
       jshintrc: true
     };
-    jshint.lint(files, options, function(results, data) {
+    jshint.lint(files, options, function(results) {
       test.ok(results.length === 0, 'Should not have reported any errors, .jshintrc must not have been found');
       test.done();
     });
@@ -66,7 +66,7 @@ exports.jshint = {
     var files = [path.join(fixtures, 'nodemodule.js')];
     var options = {};
     stdoutEqual(function() {
-      jshint.lint(files, options, function(results, data) {});
+      jshint.lint(files, options, function() {});
     }, function(result) {
       test.ok(jshint.usingGruntReporter, 'Should be using the default grunt reporter.');
       test.ok(result.indexOf('\'module\' is not defined.') !== -1, 'Should have reported errors with the default grunt reporter.');
@@ -79,7 +79,7 @@ exports.jshint = {
     var files = [path.join(fixtures, 'nodemodule.js'), path.join(fixtures, 'missingsemicolon.js')];
     var options = {};
     stdoutEqual(function() {
-      jshint.lint(files, options, function(results, data) {});
+      jshint.lint(files, options, function() {});
     }, function(result) {
       test.ok(jshint.usingGruntReporter, 'Should be using the default grunt reporter.');
       test.ok(result.match(/nodemodule\.js/g).length === 1, 'Should have reported nodemodule.js only once.');
@@ -94,7 +94,7 @@ exports.jshint = {
       reporter: 'jslint'
     };
     stdoutEqual(function() {
-      jshint.lint(files, options, function(results, data) {});
+      jshint.lint(files, options, function() {});
     }, function(result) {
       test.ok((jshint.usingGruntReporter === false), 'Should NOT be using the default grunt reporter.');
       test.ok(result.indexOf('<jslint>') !== -1, 'Should have reported errors with the jslint reporter.');
@@ -111,7 +111,7 @@ exports.jshint = {
   dontBlowUp: function(test) {
     test.expect(1);
     var files = [path.join(fixtures, 'lint.txt')];
-    jshint.lint(files, {}, function(results, data) {
+    jshint.lint(files, {}, function(results) {
       test.equal(results[0].error.code, 'W100', 'It should not blow up if an error occurs on character 0.');
       test.done();
     });
@@ -140,7 +140,6 @@ exports.jshint = {
 
     // stub jshint.reporter
     var reporterCallCount = 0;
-    var _report = jshint.reporter;
     jshint.reporter = function() { reporterCallCount++; };
 
     var files = [path.join(fixtures, 'dontlint.txt'), path.join(fixtures, 'lint.txt')];
@@ -156,7 +155,7 @@ exports.jshint = {
     var options = {
       extract: 'always'
     };
-    jshint.lint(files, options, function(results, data) {
+    jshint.lint(files, options, function(results) {
       test.equal(results[0].error.reason, 'Missing semicolon.', 'Should report a missing semicolon.');
       test.equal(results.length, 1, 'Should report only one.');
       test.done();

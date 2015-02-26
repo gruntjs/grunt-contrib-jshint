@@ -9,7 +9,6 @@
 'use strict';
 
 var path = require('path');
-var jshint = require('jshint').JSHINT;
 var jshintcli = require('jshint/src/cli');
 
 exports.init = function(grunt) {
