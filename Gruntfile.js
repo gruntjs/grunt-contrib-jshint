@@ -36,8 +36,16 @@ module.exports = function(grunt) {
           'test/fixtures/wrule.js'
         ],
       },
-      ignoresSupport: {
-        src: ['test/fixtures/dontlint.txt'],
+      ignoresSupportGruntFile: {
+        src: ['test/fixtures/dontlint_gruntfile.txt'],
+        options: {
+          ignores: 'test/fixtures/dontlint_gruntfile.txt'
+        }
+      },
+      // this rule should ignore node_modules and dontlint.txt using .jshintignore.
+      // only nodemodule.js should be linted
+      ignoresSupportIgnoreFile: {
+        src: ['test/fixtures/dontlint.txt', 'node_modules/**', 'test/fixtures/nodemodule.js']
       },
       options: {
         jshintrc: '.jshintrc',

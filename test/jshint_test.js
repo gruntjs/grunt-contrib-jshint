@@ -116,6 +116,17 @@ exports.jshint = {
       test.done();
     });
   },
+  jshintignoreInGruntfile: function(test) {
+    test.expect(1);
+    var files = [path.join(fixtures, 'dontlint_gruntfile.txt')];
+    var options = {
+      ignores: 'test/fixtures/dontlint_gruntfile.txt'
+    };
+    jshint.lint(files, options, function(results, data) {
+      test.equal(data.length, 0, 'Should not have linted a file listed in the Gruntfile ignores setting');
+      test.done();
+    });
+  },
   jshintignore: function(test) {
     test.expect(1);
     var files = [path.join(fixtures, 'dontlint.txt')];
