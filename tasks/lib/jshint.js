@@ -151,10 +151,11 @@ exports.init = function(grunt) {
       cliOptions.extract = options.extract;
       delete options.extract;
     }
-
+    var reporterOutputDir;
+    
     // Get reporter output directory for relative paths in reporters
     if (options.hasOwnProperty('reporterOutput')) {
-      var reporterOutputDir = path.dirname(options.reporterOutput);
+      reporterOutputDir = path.dirname(options.reporterOutput);
       delete options.reporterOutput;
     }
 
