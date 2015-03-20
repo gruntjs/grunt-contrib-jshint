@@ -1,3 +1,8 @@
+v0.11.1:
+  date: 2015-03-20
+  changes:
+    - fix iojs compat issues
+    - other fixes to pathing
 v0.11.0:
   date: 2015-01-22
   changes:
