@@ -19,7 +19,8 @@ module.exports = function(grunt) {
 
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
-      force: false
+      force: false,
+      reporter: null
     });
 
     // Report JSHint errors but dont fail the task

@@ -45,7 +45,7 @@ exports.init = function(grunt) {
       break;
 
     // Custom reporter
-    case options.reporter !== undefined:
+    case options.reporter !== null && options.reporter !== undefined:
       options.reporter = path.resolve(process.cwd(), options.reporter.toString());
     }
 
