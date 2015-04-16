@@ -1,4 +1,4 @@
-# grunt-contrib-jshint v0.11.1 [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-jshint.svg?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-jshint) [![Build Status: Windows](https://ci.appveyor.com/api/projects/status/j04ik7qgx21ixyfw/branch/master?svg=true)](https://ci.appveyor.com/project/gruntjs/grunt-contrib-jshint/branch/master)
+# grunt-contrib-jshint v0.11.2 [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-jshint.svg?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-jshint) [![Build Status: Windows](https://ci.appveyor.com/api/projects/status/j04ik7qgx21ixyfw/branch/master?svg=true)](https://ci.appveyor.com/project/gruntjs/grunt-contrib-jshint/branch/master)
 
 > Validate files with JSHint.
 
@@ -215,6 +215,7 @@ grunt.initConfig({
 
 ## Release History
 
+ * 2015-04-16   v0.11.2   Fix default value of the `reporter` option.
  * 2015-03-20   v0.11.1   fix iojs compat issues other fixes to pathing
  * 2015-01-22   v0.11.0   Update to JSHint ~2.6.0.
  * 2014-04-02   v0.10.0   Update to JSHint 2.5.0.
@@ -251,4 +252,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Fri Mar 20 2015 10:10:24.*
+*This file was generated on Thu Apr 16 2015 15:47:55.*

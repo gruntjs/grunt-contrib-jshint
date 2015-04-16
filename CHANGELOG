@@ -1,3 +1,7 @@
+v0.11.2:
+  date: 2015-04-16
+  changes:
+    - Fix default value of the `reporter` option.
 v0.11.1:
   date: 2015-03-20
   changes:
