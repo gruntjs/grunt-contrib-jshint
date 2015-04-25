@@ -48,17 +48,17 @@ module.exports = function(grunt) {
         failed = force;
         if (jshint.usingGruntReporter === true) {
 
-          var numErrors = grunt.util._.reduce(results,function(memo,result){
+          var numErrors = grunt.util._.reduce(results, function(memo, result) {
             return memo + (result.error ? 1 : 0);
-          },0);
+          }, 0);
 
           var numFiles = data.length;
-          grunt.log.error(numErrors + ' ' + grunt.util.pluralize(numErrors,'error/errors') + ' in ' +
-                          numFiles + ' ' + grunt.util.pluralize(numFiles,'file/files'));
+          grunt.log.error(numErrors + ' ' + grunt.util.pluralize(numErrors, 'error/errors') + ' in ' +
+                          numFiles + ' ' + grunt.util.pluralize(numFiles, 'file/files'));
         }
       } else {
         if (jshint.usingGruntReporter === true && data.length > 0) {
-          grunt.log.ok(data.length + ' ' + grunt.util.pluralize(data.length,'file/files') + ' lint free.');
+          grunt.log.ok(data.length + ' ' + grunt.util.pluralize(data.length, 'file/files') + ' lint free.');
         }
       }
 

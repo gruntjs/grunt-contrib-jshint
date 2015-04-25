@@ -16,7 +16,7 @@ exports.init = function(grunt) {
     usingGruntReporter: false
   };
 
-  var pad = function(msg,length) {
+  var pad = function(msg, length) {
     while (msg.length < length) {
       msg = ' ' + msg;
     }
@@ -99,7 +99,9 @@ exports.init = function(grunt) {
       var e = result.error;
 
       // Sometimes there's no error object.
-      if (!e) { return; }
+      if (!e) {
+        return;
+      }
 
       if (e.evidence) {
         // Manually increment errorcount since we're not using grunt.log.error().
@@ -109,10 +111,10 @@ exports.init = function(grunt) {
         // does. See issue: https://github.com/jshint/jshint/issues/430
         // Replacing tabs with appropriate spaces (i.e. columns) ensures that
         // caret will line up correctly.
-        var evidence = e.evidence.replace(/\t/g,grunt.util.repeat(options.indent,' '));
+        var evidence = e.evidence.replace(/\t/g, grunt.util.repeat(options.indent, ' '));
 
-        grunt.log.writeln((pad(e.line.toString(),7) + ' |') + evidence.grey);
-        grunt.log.write(grunt.util.repeat(9,' ') + grunt.util.repeat(e.character -1,' ') + '^ ');
+        grunt.log.writeln(pad(e.line.toString(), 7) + ' |' + evidence.grey);
+        grunt.log.write(grunt.util.repeat(9, ' ') + grunt.util.repeat(e.character - 1, ' ') + '^ ');
         grunt.verbose.write('[' + e.code + '] ');
         grunt.log.writeln(e.reason);
 
@@ -128,7 +130,7 @@ exports.init = function(grunt) {
   exports.lint = function(files, options, done) {
     var cliOptions = {
       verbose: grunt.option('verbose'),
-      extensions: '',
+      extensions: ''
     };
 
     // A list of non-dot-js extensions to check

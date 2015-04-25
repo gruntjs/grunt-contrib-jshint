@@ -16,25 +16,25 @@ module.exports = function(grunt) {
       allFiles: [
         'Gruntfile.js',
         'tasks/**/*.js',
-        '<%= nodeunit.tests %>',
+        '<%= nodeunit.tests %>'
       ],
       individualFiles: {
         files: [
           {src: 'Gruntfile.js'},
           {src: 'tasks/**/*.js'},
-          {src: '<%= nodeunit.tests %>'},
-        ],
+          {src: '<%= nodeunit.tests %>'}
+        ]
       },
       withReporterShouldFail: {
         options: {
           reporter: 'checkstyle',
           reporterOutput: 'tmp/report.xml',
-          force: true,
+          force: true
         },
         src: [
           'test/fixtures/missingsemicolon.js',
           'test/fixtures/wrule.js'
-        ],
+        ]
       },
       ignoresSupportGruntFile: {
         src: ['test/fixtures/dontlint_gruntfile.txt'],
@@ -48,14 +48,14 @@ module.exports = function(grunt) {
         src: ['test/fixtures/dontlint.txt', 'node_modules/**', 'test/fixtures/nodemodule.js']
       },
       options: {
-        jshintrc: '.jshintrc',
-      },
+        jshintrc: '.jshintrc'
+      }
     },
 
     // Unit tests.
     nodeunit: {
-      tests: ['test/*_test.js'],
-    },
+      tests: ['test/*_test.js']
+    }
   });
 
   // Actually load this plugin's task(s).

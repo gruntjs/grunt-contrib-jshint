@@ -96,7 +96,7 @@ exports.jshint = {
     stdoutEqual(function() {
       jshint.lint(files, options, function() {});
     }, function(result) {
-      test.ok((jshint.usingGruntReporter === false), 'Should NOT be using the default grunt reporter.');
+      test.ok(jshint.usingGruntReporter === false, 'Should NOT be using the default grunt reporter.');
       test.ok(result.indexOf('<jslint>') !== -1, 'Should have reported errors with the jslint reporter.');
       test.done();
     });
@@ -151,7 +151,9 @@ exports.jshint = {
 
     // stub jshint.reporter
     var reporterCallCount = 0;
-    jshint.reporter = function() { reporterCallCount++; };
+    jshint.reporter = function() {
+      reporterCallCount++;
+    };
 
     var files = [path.join(fixtures, 'dontlint.txt'), path.join(fixtures, 'lint.txt')];
     jshint.lint(files, {}, function(results, data) {
