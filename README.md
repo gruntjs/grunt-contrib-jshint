@@ -31,11 +31,10 @@ For more explanations of the lint errors JSHint will throw at you please visit [
 
 ### Options
 
-Any specified option will be passed through directly to [JSHint][], thus you can specify any option that JSHint supports. See the [JSHint options][] for a list of supported options.
+Any specified option will be passed through directly to [JSHint][], thus you can specify any option that JSHint supports. See the [JSHint documentation][] for a list of supported options.
 
 [JSHint]: http://www.jshint.com/
-[JSHint options]: http://jshint.com/docs/options/
-
+[JSHint documentation]: http://www.jshint.com/docs/
 
 A few additional options are supported:
 
@@ -47,7 +46,6 @@ Default: `null`
 
 A map of global variables, with keys as names and a boolean value to determine if they are assignable. This is not a standard JSHint option, but is passed into the `JSHINT` function as its third argument. See the [JSHint documentation][] for more information.
 
-[JSHint documentation]: http://www.jshint.com/docs/
 
 #### jshintrc
 
