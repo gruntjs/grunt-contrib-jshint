@@ -156,7 +156,9 @@ exports.init = function(grunt) {
     var reporterOutputDir;
     // Get reporter output directory for relative paths in reporters
     if (options.hasOwnProperty('reporterOutput')) {
-      reporterOutputDir = path.dirname(options.reporterOutput);
+      if(options.reporterOutputRelative) {
+        reporterOutputDir = path.dirname(options.reporterOutput);
+      }
       delete options.reporterOutput;
     }
 
@@ -164,7 +166,7 @@ exports.init = function(grunt) {
     var reporter = exports.selectReporter(options);
 
     // Remove bad options that may have came in from the cli
-    ['reporter', 'jslint-reporter', 'checkstyle-reporter', 'show-non-errors'].forEach(function(opt) {
+    ['reporter', 'reporterOutputRelative', 'jslint-reporter', 'checkstyle-reporter', 'show-non-errors'].forEach(function(opt) {
       if (options.hasOwnProperty(opt)) {
         delete options[opt];
       }
@@ -194,9 +196,11 @@ exports.init = function(grunt) {
     var allData = [];
     cliOptions.args = files;
     cliOptions.reporter = function(results, data) {
-      results.forEach(function(datum) {
-        datum.file = reporterOutputDir ? path.relative(reporterOutputDir, datum.file) : datum.file;
-      });
+      if(reporterOutputDir) {
+        results.forEach(function(datum) {
+          datum.file = path.relative(reporterOutputDir, datum.file);
+        });
+      }
       reporter(results, data, options);
       allResults = allResults.concat(results);
       allData = allData.concat(data);
