@@ -9,7 +9,7 @@
   "repository": "gruntjs/grunt-contrib-jshint",
   "license": "MIT",
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=0.12.7"
   },
   "scripts": {
     "test": "grunt test"
