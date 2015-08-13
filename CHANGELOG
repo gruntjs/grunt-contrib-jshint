@@ -1,4 +1,5 @@
-next:
+v0.11.2:
+  date: 2015-08-13
   changes:
     - Update to JSHint ~2.8.0.
 v0.11.2:
