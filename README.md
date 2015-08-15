@@ -1,6 +1,6 @@
 # grunt-contrib-jshint v0.11.2 [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-jshint.svg?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-jshint) [![Build Status: Windows](https://ci.appveyor.com/api/projects/status/j04ik7qgx21ixyfw/branch/master?svg=true)](https://ci.appveyor.com/project/gruntjs/grunt-contrib-jshint/branch/master)
 
-> Validate files with JSHint.
+> Validate files with JSHint
 
 
 
@@ -31,10 +31,10 @@ For more explanations of the lint errors JSHint will throw at you please visit [
 
 ### Options
 
-Any specified option will be passed through directly to [JSHint][], thus you can specify any option that JSHint supports. See the [JSHint documentation][] for a list of supported options.
+Any specified option will be passed through directly to [JSHint][], thus you can specify any option that JSHint supports. See the [JSHint options][] for a list of supported options.
 
 [JSHint]: http://www.jshint.com/
-[JSHint documentation]: http://www.jshint.com/docs/
+[JSHint options]: http://jshint.com/docs/options/
 
 A few additional options are supported:
 
@@ -46,6 +46,7 @@ Default: `null`
 
 A map of global variables, with keys as names and a boolean value to determine if they are assignable. This is not a standard JSHint option, but is passed into the `JSHINT` function as its third argument. See the [JSHint documentation][] for more information.
 
+[JSHint documentation]: http://www.jshint.com/docs/
 
 #### jshintrc
 
@@ -252,4 +253,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Thu Apr 16 2015 15:47:55.*
+*This file was generated on Tue Jun 16 2015 17:16:16.*
