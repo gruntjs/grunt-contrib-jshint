@@ -21,7 +21,7 @@ A map of global variables, with keys as names and a boolean value to determine i
 Type: `String` or `true`  
 Default: `null`
 
-If set to `true`, no config will be sent to jshint and jshint will search for `.jshintrc` files relative to the files being linted.
+If set to `true`, no config will be sent to JSHint and JSHint will search for `.jshintrc` files relative to the files being linted.
 
 If a filename is specified, options and globals defined therein will be used. The `jshintrc` file must be valid JSON and looks something like this:
 
