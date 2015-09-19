@@ -215,6 +215,7 @@ grunt.initConfig({
 
 ## Release History
 
+ * 2015-09-03   v0.11.4   Update to JSHint ~2.9.0.
  * 2015-09-03   v0.11.3   Update to JSHint ~2.8.0.
  * 2015-04-16   v0.11.2   Fix default value of the `reporter` option.
  * 2015-03-20   v0.11.1   Fix io.js compat issues Other fixes to pathing
