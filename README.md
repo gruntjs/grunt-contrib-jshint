@@ -126,7 +126,7 @@ Specify a filepath to output the results of a reporter. If `reporterOutput` is s
 ### Usage examples
 
 #### Wildcards
-In this example, running `grunt jshint:all` (or `grunt jshint` because `jshint` is a [multi task](http://gruntjs.com/configuring-tasks#task-configuration-and-targets)) will lint the project's Gruntfile as well as all JavaScript files in the `lib` and `test` directories and their subdirectorieses, using the default JSHint options.
+In this example, running `grunt jshint:all` (or `grunt jshint` because `jshint` is a [multi task](http://gruntjs.com/configuring-tasks#task-configuration-and-targets)) will lint the project's Gruntfile as well as all JavaScript files in the `lib` and `test` directories and their subdirectories, using the default JSHint options.
 
 ```js
 // Project configuration.
@@ -253,4 +253,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Sat Sep 19 2015 09:02:01.*
+*This file was generated on Mon Oct 12 2015 00:48:12.*
