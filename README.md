@@ -217,17 +217,17 @@ grunt.initConfig({
 
  * 2015-09-03   v0.11.3   Update to JSHint ~2.8.0.
  * 2015-04-16   v0.11.2   Fix default value of the `reporter` option.
- * 2015-03-20   v0.11.1   Fix io.js compat issues Other fixes to pathing
+ * 2015-03-20   v0.11.1   Fix io.js compatibility issues. Other fixes to pathing.
  * 2015-01-22   v0.11.0   Update to JSHint ~2.6.0.
  * 2014-04-02   v0.10.0   Update to JSHint 2.5.0.
  * 2014-03-12   v0.9.2   Fixes a bug where `reporterOutput` was still passed to JSHint.
  * 2014-03-12   v0.9.1   Don't pass `reporterOutput` option to JSHint.
- * 2014-03-12   v0.9.0   Replace deprecated grunt.util._.clone with Object.create() Replace deprecated grunt.util.hooker with hooker lib Enhancing the readability of the output. Reporter output is relative to the output file. Pass JSHint options to the external reporter.
+ * 2014-03-12   v0.9.0   Replace deprecated `grunt.util._.clone` with `Object.create()`. Replace deprecated `grunt.util.hooker` with hooker lib. Enhancing the readability of the output. Reporter output is relative to the output file. Pass JSHint options to the external reporter.
  * 2013-12-25   v0.8.0   Update to JSHint 2.4.0.
  * 2013-11-16   v0.7.2   Only print file name once per error.
  * 2013-10-31   v0.7.1   Ability to set jshintrc option to true to use JSHint's native ability for finding .jshintrc files relative to the linted files.
  * 2013-10-23   v0.7.0   Update to JSHint 2.3.0.
- * 2013-10-23   v0.6.5   Fix output when maxerr is low.
+ * 2013-10-23   v0.6.5   Fix output when `maxerr` is low.
  * 2013-08-29   v0.6.4   jshintrc now loaded by JSHint allowing comments.
  * 2013-08-15   v0.6.3   Fix module location for JSHint 2.1.10.
  * 2013-07-29   v0.6.2   Update to JSHint 2.1.7.
@@ -237,20 +237,20 @@ grunt.initConfig({
  * 2013-05-19   v0.5.3   Performance: Execute the reporter once rather than per file.
  * 2013-05-18   v0.5.2   Fix printing too many erroneous ignored file errors.
  * 2013-05-17   v0.5.1   Fix for when only 1 file is lint free.
- * 2013-05-17   v0.5.0   Bump to JSHint 2.0. Add support for .jshintignore files and ignores option Add support for extensions option. Add support for custom reporters and output report to a file.
+ * 2013-05-17   v0.5.0   Bump to JSHint 2.0. Add support for .jshintignore files and ignores option. Add support for extensions option. Add support for custom reporters and output report to a file.
  * 2013-04-08   v0.4.3   Fix evaluation of predef option when it's an object.
  * 2013-04-08   v0.4.2   Avoid wiping force option when jshintrc is used.
  * 2013-04-06   v0.4.1   Fix to allow object type for deprecated predef.
  * 2013-04-04   v0.4.0   Revert task level options to override jshintrc files.
  * 2013-03-13   v0.3.0   Bump to JSHint 1.1.0. Add force option to report JSHint errors but not fail the task. Add error/warning code to message. Allow task level options to override jshintrc file.
- * 2013-02-26   v0.2.0   Bump to JSHint 1.0
+ * 2013-02-26   v0.2.0   Bump to JSHint 1.0.
  * 2013-02-15   v0.1.1   First official release for Grunt 0.4.0.
  * 2013-01-18   v0.1.1rc6   Updating grunt/gruntplugin dependencies to rc6. Changing in-development grunt/gruntplugin dependency versions from tilde version ranges to specific versions.
- * 2013-01-09   v0.1.1rc5   Updating to work with grunt v0.4.0rc5. Switching to this.filesSrc api.
+ * 2013-01-09   v0.1.1rc5   Updating to work with grunt v0.4.0rc5. Switching to `this.filesSrc` API.
  * 2012-10-18   v0.1.0   Work in progress, not yet officially released.
 
 ---
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Mon Oct 12 2015 00:48:12.*
+*This file was generated on Mon Oct 12 2015 00:56:47.*

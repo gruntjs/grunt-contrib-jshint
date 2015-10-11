@@ -9,8 +9,8 @@ v0.11.2:
 v0.11.1:
   date: 2015-03-20
   changes:
-    - Fix io.js compat issues
-    - Other fixes to pathing
+    - Fix io.js compatibility issues.
+    - Other fixes to pathing.
 v0.11.0:
   date: 2015-01-22
   changes:
@@ -30,8 +30,8 @@ v0.9.1:
 v0.9.0:
   date: 2014-03-12
   changes:
-    - Replace deprecated grunt.util._.clone with Object.create()
-    - Replace deprecated grunt.util.hooker with hooker lib
+    - Replace deprecated `grunt.util._.clone` with `Object.create()`.
+    - Replace deprecated `grunt.util.hooker` with hooker lib.
     - Enhancing the readability of the output.
     - Reporter output is relative to the output file.
     - Pass JSHint options to the external reporter.
@@ -54,7 +54,7 @@ v0.7.0:
 v0.6.5:
   date: 2013-10-23
   changes:
-    - Fix output when maxerr is low.
+    - Fix output when `maxerr` is low.
 v0.6.4:
   date: 2013-08-29
   changes:
@@ -96,7 +96,7 @@ v0.5.0:
   date: 2013-05-17
   changes:
     - Bump to JSHint 2.0.
-    - Add support for .jshintignore files and ignores option
+    - Add support for .jshintignore files and ignores option.
     - Add support for extensions option.
     - Add support for custom reporters and output report to a file.
 v0.4.3:
@@ -125,7 +125,7 @@ v0.3.0:
 v0.2.0:
   date: 2013-02-26
   changes:
-    - Bump to JSHint 1.0
+    - Bump to JSHint 1.0.
 v0.1.1:
   date: 2013-02-15
   changes:
@@ -139,7 +139,7 @@ v0.1.1rc5:
   date: 2013-01-09
   changes:
     - Updating to work with grunt v0.4.0rc5.
-    - Switching to this.filesSrc api.
+    - Switching to `this.filesSrc` API.
 v0.1.0:
   date: 2012-10-18
   changes:
