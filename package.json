@@ -9,7 +9,7 @@
   "repository": "gruntjs/grunt-contrib-jshint",
   "license": "MIT",
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=0.12.0"
   },
   "scripts": {
     "test": "grunt test"
@@ -25,7 +25,7 @@
     "grunt-contrib-nodeunit": "^0.4.1"
   },
   "peerDependencies": {
-    "grunt": ">=0.4.0"
+    "grunt": ">=0.4.5"
   },
   "keywords": [
     "gruntplugin"
