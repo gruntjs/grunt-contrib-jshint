@@ -156,7 +156,7 @@ exports.init = function(grunt) {
     var reporterOutputDir;
     // Get reporter output directory for relative paths in reporters
     if (options.hasOwnProperty('reporterOutput')) {
-      if(options.reporterOutputRelative) {
+      if (options.reporterOutputRelative) {
         reporterOutputDir = path.dirname(options.reporterOutput);
       }
       delete options.reporterOutput;
@@ -196,7 +196,7 @@ exports.init = function(grunt) {
     var allData = [];
     cliOptions.args = files;
     cliOptions.reporter = function(results, data) {
-      if(reporterOutputDir) {
+      if (reporterOutputDir) {
         results.forEach(function(datum) {
           datum.file = path.relative(reporterOutputDir, datum.file);
         });
