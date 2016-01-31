@@ -92,7 +92,7 @@ exports.init = function(grunt) {
 
       // Only print file name once per error
       if (result.file !== lastfile) {
-        grunt.log.writeln((result.file ? '   ' + result.file : '').bold);
+        grunt.log.writeln((result.file ? ' ' + result.file : '').bold());
       }
       lastfile = result.file;
 
