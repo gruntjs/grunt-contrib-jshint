@@ -9,6 +9,7 @@
 'use strict';
 
 var path = require('path');
+var chalk = require('chalk');
 var jshintcli = require('jshint/src/cli');
 
 exports.init = function(grunt) {
@@ -92,7 +93,7 @@ exports.init = function(grunt) {
 
       // Only print file name once per error
       if (result.file !== lastfile) {
-        grunt.log.writeln((result.file ? '   ' + result.file : '').bold);
+        grunt.log.writeln(chalk.bold(result.file ? '   ' + result.file : ''));
       }
       lastfile = result.file;
 
@@ -113,7 +114,7 @@ exports.init = function(grunt) {
         // caret will line up correctly.
         var evidence = e.evidence.replace(/\t/g, grunt.util.repeat(options.indent, ' '));
 
-        grunt.log.writeln(pad(e.line.toString(), 7) + ' |' + evidence.grey);
+        grunt.log.writeln(pad(e.line.toString(), 7) + ' |' + chalk.gray(evidence));
         grunt.log.write(grunt.util.repeat(9, ' ') + grunt.util.repeat(e.character - 1, ' ') + '^ ');
         grunt.verbose.write('[' + e.code + '] ');
         grunt.log.writeln(e.reason);
