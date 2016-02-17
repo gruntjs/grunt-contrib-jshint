@@ -1,4 +1,4 @@
-# grunt-contrib-jshint v0.12.0 [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-jshint.svg?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-jshint) [![Build Status: Windows](https://ci.appveyor.com/api/projects/status/j04ik7qgx21ixyfw/branch/master?svg=true)](https://ci.appveyor.com/project/gruntjs/grunt-contrib-jshint/branch/master)
+# grunt-contrib-jshint v1.0.0 [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-jshint.svg?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-jshint) [![Build Status: Windows](https://ci.appveyor.com/api/projects/status/j04ik7qgx21ixyfw/branch/master?svg=true)](https://ci.appveyor.com/project/gruntjs/grunt-contrib-jshint/branch/master)
 
 > Validate files with JSHint
 
@@ -215,6 +215,7 @@ grunt.initConfig({
 
 ## Release History
 
+ * 2016-02-16   v1.0.0   Replace String prototype colors with chalk. Update Grunt peerDep to `>=0.4.0`.
  * 2016-01-17   v0.12.0   Update to JSHint ~2.9.0.
  * 2015-09-03   v0.11.3   Update to JSHint ~2.8.0.
  * 2015-04-16   v0.11.2   Fix default value of the `reporter` option.
@@ -254,4 +255,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Sun Jan 17 2016 13:06:03.*
+*This file was generated on Tue Feb 16 2016 16:38:51.*

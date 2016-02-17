@@ -1,3 +1,8 @@
+v1.0.0:
+  date: 2016-02-16
+  changes:
+    - Replace String prototype colors with chalk.
+    - Update Grunt peerDep to `>=0.4.0`.
 v0.12.0:
   date: 2016-01-17
   changes:
