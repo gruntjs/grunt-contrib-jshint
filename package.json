@@ -26,9 +26,6 @@
     "grunt-contrib-internal": "^0.4.12",
     "grunt-contrib-nodeunit": "^0.4.1"
   },
-  "peerDependencies": {
-    "grunt": ">=0.4.0 && >1.0.0"
-  },
   "keywords": [
     "gruntplugin"
   ],
