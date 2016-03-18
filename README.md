@@ -5,7 +5,6 @@
 
 
 ## Getting Started
-This plugin requires Grunt `>=0.4.0`
 
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
@@ -239,9 +238,9 @@ grunt.initConfig({
  * 2013-05-19   v0.5.3   Performance: Execute the reporter once rather than per file.
  * 2013-05-18   v0.5.2   Fix printing too many erroneous ignored file errors.
  * 2013-05-17   v0.5.1   Fix for when only 1 file is lint free.
- * 2013-05-17   v0.5.0   Bump to JSHint 2.0. Add support for .jshintignore files and ignores option. Add support for extensions option. Add support for custom reporters and output report to a file.
- * 2013-04-08   v0.4.3   Fix evaluation of predef option when it's an object.
- * 2013-04-08   v0.4.2   Avoid wiping force option when jshintrc is used.
+ * 2013-05-17   v0.5.0   Bump to JSHint 2.0. Add support for .jshintignore files and ignores option. Add support for `extensions` option. Add support for custom reporters and output report to a file.
+ * 2013-04-08   v0.4.3   Fix evaluation of `predef` option when it's an object.
+ * 2013-04-08   v0.4.2   Avoid wiping `force` option when jshintrc is used.
  * 2013-04-06   v0.4.1   Fix to allow object type for deprecated predef.
  * 2013-04-04   v0.4.0   Revert task level options to override jshintrc files.
  * 2013-03-13   v0.3.0   Bump to JSHint 1.1.0. Add force option to report JSHint errors but not fail the task. Add error/warning code to message. Allow task level options to override jshintrc file.
@@ -255,4 +254,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Tue Feb 16 2016 16:38:51.*
+*This file was generated on Fri Mar 18 2016 19:03:41.*
