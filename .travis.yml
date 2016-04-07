@@ -7,6 +7,9 @@ node_js:
   - "5"
   - "iojs"
 before_install:
-  - npm install -g npm
+  - if [ "$TRAVIS_NODE_VERSION" = "0.10" ]; then npm install -g npm@2; fi
 matrix:
   fast_finish: true
+cache:
+  directories:
+    - node_modules
