@@ -157,7 +157,7 @@ exports.init = function(grunt) {
     var reporterOutputDir;
     // Get reporter output directory for relative paths in reporters
     if (options.hasOwnProperty('reporterOutput')) {
-      if (options.reporterOutputRelative) {
+      if (options.reporterOutput) {
         reporterOutputDir = path.dirname(options.reporterOutput);
       }
       delete options.reporterOutput;
