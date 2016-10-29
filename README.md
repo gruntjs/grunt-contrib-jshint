@@ -120,7 +120,15 @@ options: {
 Type: `String`  
 Default: `null`
 
-Specify a filepath to output the results of a reporter. If `reporterOutput` is specified then all output will be written to the given filepath instead of printed to stdout.
+Specify a filepath  to output the results of a reporter. If `reporterOutput` is specified then all output will be written to the given filepath instead of printed to stdout.
+
+#### reporterOutputRelative
+
+Type: `Boolean`  
+Default: `true`
+
+Results of a reporter will use a relative filepath to `reporterOutput`.  If set to `false` then filepaths will appear relative to the current folder.  Unless `reporterOutput` is not set this option will not have any effect.
+
 
 ### Usage examples
 
