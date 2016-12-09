@@ -179,6 +179,16 @@ exports.init = function(grunt) {
     } else if (options.jshintrc) {
       // Read JSHint options from a specified jshintrc file.
       cliOptions.config = jshintcli.loadConfig(options.jshintrc);
+      // merge globals setting from config into the globals defined in jshintrc file
+      if (options.globals) {
+        if(!cliOptions.config.globals) {
+          cliOptions.config.globals = {};
+        }
+        for (var key in options.globals) {
+          cliOptions.config.globals[key] = options.globals[key];
+        }
+        delete options.globals;
+      }
     } else {
       // Enable/disable debugging if option explicitly set.
       if (grunt.option('debug') !== undefined) {

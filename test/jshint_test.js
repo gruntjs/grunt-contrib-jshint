@@ -173,5 +173,19 @@ exports.jshint = {
       test.equal(results.length, 1, 'Should report only one.');
       test.done();
     });
+  },
+  mergeGlobalsConfigWithJshintrc: function(test) {
+    test.expect(1);
+    var files = [path.join(fixtures, 'globals.js')];
+    var options = {
+      jshintrc: path.join(fixtures, 'globals_jshintrc.js'),
+      globals: {
+        'MyApp': true
+      }
+    };
+    jshint.lint(files, options, function(results, data) {
+      test.ok(results.length === 0, 'Should not have reported any errors, custom globals setting must not have been merged with jshintrc settings.');
+      test.done();
+    });
   }
 };
