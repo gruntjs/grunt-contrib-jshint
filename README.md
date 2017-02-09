@@ -86,6 +86,14 @@ Default: `null`
 A list of files and dirs to ignore. This will override your `.jshintignore` file if set and does not merge.
 
 
+#### ignoreFromGitIgnore
+
+Type: `Boolean`  
+Default: `false`
+
+Set `ignoreFromGitIgnore` to `true` to make JSHint to also ignore the files ignored by `.gitignore`. This way the `.gitignore` acts like the  `.jshintignore`.
+
+
 #### force
 
 Type: `Boolean`  

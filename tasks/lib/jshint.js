@@ -149,6 +149,36 @@ exports.init = function(grunt) {
       delete options.ignores;
     }
 
+    // A flag that indicates whether jshint should ignore
+    // the files from .gitignore too
+    if (options.ignoreFromGitIgnore) {
+      var gitignorePath = './.gitignore',
+          toIgnore = [];
+
+      // if the current project has a .gitignore file
+      if(grunt.file.exists(gitignorePath)) {
+        // an array of all the stated files from .gitignore
+        toIgnore = grunt.file.read(gitignorePath)
+                    .replace(/(\s|\t|\n)+/g, ' ')
+                    .trim()
+                    .split(/\s/g);
+      }
+
+      // if we have something to ignore
+      if(toIgnore.length) {
+        // if we didn't ignore anything before
+        if(!cliOptions.ignores) {
+          cliOptions.ignores = toIgnore;
+        } else {
+          // @todo: remove duplicate entries
+          cliOptions.ignores = cliOptions.ignores.concat(toIgnore);
+        }
+      }
+
+      // remove this "bad" option from the options object.
+      delete options.ignoreFromGitIgnore;
+    }
+
     // Option to extract JS from HTML file
     if (options.extract) {
       cliOptions.extract = options.extract;
