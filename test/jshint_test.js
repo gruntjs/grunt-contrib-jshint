@@ -173,5 +173,12 @@ exports.jshint = {
       test.equal(results.length, 1, 'Should report only one.');
       test.done();
     });
+  },
+  undefinedAccess: function(test) {
+    var files = [path.join(fixtures, 'undefinedaccess.js')];
+    jshint.lint(files, {}, function(results, data) {
+      test.equal(results.length, 1, 'Should report only one.');
+      test.done();
+    });
   }
 };

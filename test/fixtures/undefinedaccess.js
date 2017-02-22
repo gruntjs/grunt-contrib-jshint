@@ -1,0 +1,1 @@
+undefinedObject.property = 5;
