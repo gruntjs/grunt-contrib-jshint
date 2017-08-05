@@ -130,7 +130,7 @@ exports.init = function(grunt) {
   // Run JSHint on the given files with the given options
   exports.lint = function(files, options, done) {
     var cliOptions = {
-      verbose: grunt.option('verbose'),
+      verbose: grunt.option('verbose') || !!options.verbose,
       extensions: ''
     };
 
@@ -189,7 +189,10 @@ exports.init = function(grunt) {
         }
       }
       // pass all of the remaining options directly to jshint
-      cliOptions.config = options;
+      cliOptions.config = Object.assign({},options);
+      //options is passed to the reporter hence we need to leave verbose on  options
+      //but verbose is an in valid option for jshint, therefore remove it from config.
+      delete cliOptions.config.verbose;
     }
 
     // Run JSHint on all file and collect results/data

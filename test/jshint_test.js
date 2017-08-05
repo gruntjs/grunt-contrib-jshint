@@ -101,6 +101,38 @@ exports.jshint = {
       test.done();
     });
   },
+  alternateReporterVerboseTrue: function(test) {
+    test.expect(2);
+    var files = [path.join(fixtures, 'nodemodule.js')];
+    var options = {
+      reporter: require('jshint-stylish'), 
+      verbose: true
+    };
+    stdoutEqual(function() {
+      jshint.lint(files, options, function() {});
+    }, function(result) {
+      var reg = /line.*\((W\d*)\)/g;
+      test.ok(jshint.usingGruntReporter === false, 'Should NOT be using the default grunt reporter.');
+      test.ok(reg.test(result) === true, 'Should have reported errors with with verbose option');
+      test.done();
+    });
+  },
+    alternateReporterVerboseFalse: function(test) {
+    test.expect(2);
+    var files = [path.join(fixtures, 'nodemodule.js')];
+    var options = {
+      reporter: require('jshint-stylish'), 
+      verbose: false
+    };
+    stdoutEqual(function() {
+      jshint.lint(files, options, function() {});
+    }, function(result) {
+      var reg = /line.*\((W\d*)\)/g;
+      test.ok(jshint.usingGruntReporter === false, 'Should NOT be using the default grunt reporter.');
+      test.ok(reg.test(result) === false, 'Should have reported errors with without verbose option');
+      test.done();
+    });
+  },
   reporterOutput: function(test) {
     test.expect(1);
     var result = grunt.file.read(path.join('tmp', 'report.xml'));
