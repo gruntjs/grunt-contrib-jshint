@@ -189,7 +189,8 @@ exports.init = function(grunt) {
         }
       }
       // pass all of the remaining options directly to jshint
-      cliOptions.config = Object.assign({},options);
+      var extend = require('util')._extend;
+      cliOptions.config = extend({},options);
       //options is passed to the reporter hence we need to leave verbose on  options
       //but verbose is an in valid option for jshint, therefore remove it from config.
       delete cliOptions.config.verbose;
