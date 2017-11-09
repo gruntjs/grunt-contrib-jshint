@@ -21,7 +21,12 @@ var stdoutEqual = function(callback, done) {
     }
   });
   // Execute the logging code to be tested.
-  callback();
+  try {
+    callback();
+  } catch (error) {
+    hooker.unhook(process.stdout, 'write');
+    throw error;
+  }
   // Restore process.stdout.write to its original value.
   hooker.unhook(process.stdout, 'write');
   // Actually test the actually-logged stdout string to the expected value.
