@@ -214,6 +214,7 @@ grunt.initConfig({
 
 ## Release History
 
+ * 2016-07-22   v1.2.0   Bump minor JSHint version. Bump other deps. drops node 0.10 and 4.
  * 2016-11-23   v1.1.0   Fix relative output Bump minor version
  * 2016-02-16   v1.0.0   Replace String prototype colors with chalk. Update Grunt peerDep to `>=0.4.0`.
  * 2016-01-17   v0.12.0   Update to JSHint ~2.9.0.
@@ -255,4 +256,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Tue May 15 2018 22:36:39.*
+*This file was generated on Mon Jul 23 2018 10:16:08.*

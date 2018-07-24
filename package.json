@@ -18,10 +18,10 @@
   "dependencies": {
     "chalk": "^2.4.1",
     "hooker": "^0.2.3",
-    "jshint": "~2.9.4"
+    "jshint": "~2.9.5"
   },
   "devDependencies": {
-    "grunt": "^1.0.0",
+    "grunt": "^1.0.3",
     "grunt-contrib-internal": "^3.0.0",
     "grunt-contrib-nodeunit": "^2.0.0"
   },
