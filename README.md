@@ -26,8 +26,6 @@ _Run this task with the `grunt jshint` command._
 
 Task targets, files and options may be specified according to the grunt [Configuring tasks](http://gruntjs.com/configuring-tasks) guide.
 
-For more explanations of the lint errors JSHint will throw at you please visit [jslinterrors.com](http://jslinterrors.com/).
-
 ### Options
 
 Any specified option will be passed through directly to [JSHint][], thus you can specify any option that JSHint supports. See the [JSHint documentation][] for a list of supported options.
