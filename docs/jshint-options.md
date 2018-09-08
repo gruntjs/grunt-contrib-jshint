@@ -2,8 +2,8 @@
 
 Any specified option will be passed through directly to [JSHint][], thus you can specify any option that JSHint supports. See the [JSHint documentation][] for a list of supported options.
 
-[JSHint]: http://www.jshint.com/
-[JSHint documentation]: http://www.jshint.com/docs/
+[JSHint]: http://jshint.com/
+[JSHint documentation]: http://jshint.com/docs/
 
 A few additional options are supported:
 

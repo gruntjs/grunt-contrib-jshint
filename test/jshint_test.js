@@ -112,7 +112,7 @@ exports.jshint = {
     test.expect(1);
     var files = [path.join(fixtures, 'lint.txt')];
     jshint.lint(files, {}, function(results) {
-      test.equal(results[0].error.code, 'W100', 'It should not blow up if an error occurs on character 0.');
+      test.equal(results[0].error.code, 'E024', 'It should not blow up if an error occurs on character 0.');
       test.done();
     });
   },
