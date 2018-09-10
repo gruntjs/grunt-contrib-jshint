@@ -6,7 +6,7 @@
 
 ## Getting Started
 
-If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
+If you haven't used [Grunt](https://gruntjs.com/) before, be sure to check out the [Getting Started](https://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](https://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
 npm install grunt-contrib-jshint --save-dev
@@ -24,14 +24,14 @@ grunt.loadNpmTasks('grunt-contrib-jshint');
 ## Jshint task
 _Run this task with the `grunt jshint` command._
 
-Task targets, files and options may be specified according to the grunt [Configuring tasks](http://gruntjs.com/configuring-tasks) guide.
+Task targets, files and options may be specified according to the grunt [Configuring tasks](https://gruntjs.com/configuring-tasks) guide.
 
 ### Options
 
 Any specified option will be passed through directly to [JSHint][], thus you can specify any option that JSHint supports. See the [JSHint documentation][] for a list of supported options.
 
-[JSHint]: http://www.jshint.com/
-[JSHint documentation]: http://www.jshint.com/docs/
+[JSHint]: http://jshint.com/
+[JSHint documentation]: http://jshint.com/docs/
 
 A few additional options are supported:
 
@@ -123,7 +123,7 @@ Specify a filepath to output the results of a reporter. If `reporterOutput` is s
 ### Usage examples
 
 #### Wildcards
-In this example, running `grunt jshint:all` (or `grunt jshint` because `jshint` is a [multi task](http://gruntjs.com/configuring-tasks#task-configuration-and-targets)) will lint the project's Gruntfile as well as all JavaScript files in the `lib` and `test` directories and their subdirectories, using the default JSHint options.
+In this example, running `grunt jshint:all` (or `grunt jshint` because `jshint` is a [multi task](https://gruntjs.com/configuring-tasks#task-configuration-and-targets)) will lint the project's Gruntfile as well as all JavaScript files in the `lib` and `test` directories and their subdirectories, using the default JSHint options.
 
 ```js
 // Project configuration.
@@ -254,4 +254,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Mon Jul 23 2018 10:16:08.*
+*This file was generated on Sat Sep 08 2018 10:30:26.*
