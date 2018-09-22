@@ -1,4 +1,4 @@
-# grunt-contrib-jshint v1.2.0 [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-jshint.svg?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-jshint) [![Build Status: Windows](https://ci.appveyor.com/api/projects/status/j04ik7qgx21ixyfw/branch/master?svg=true)](https://ci.appveyor.com/project/gruntjs/grunt-contrib-jshint/branch/master)
+# grunt-contrib-jshint v2.0.0 [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-jshint.svg?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-jshint) [![Build Status: Windows](https://ci.appveyor.com/api/projects/status/j04ik7qgx21ixyfw/branch/master?svg=true)](https://ci.appveyor.com/project/gruntjs/grunt-contrib-jshint/branch/master)
 
 > Validate files with JSHint
 
@@ -118,7 +118,14 @@ options: {
 Type: `String`  
 Default: `null`
 
-Specify a filepath to output the results of a reporter. If `reporterOutput` is specified then all output will be written to the given filepath instead of printed to stdout.
+Specify a filepath  to output the results of a reporter. If `reporterOutput` is specified then all output will be written to the given filepath instead of printed to stdout.
+
+###### reporterOutputRelative
+
+Type: `Boolean`  
+Default: `true`
+
+Results of a reporter will use a relative filepath to `reporterOutput`.  If set to `false` then filepaths will appear relative to the current folder.  Unless `reporterOutput` is not set this option will not have any effect.
 
 ### Usage examples
 
@@ -212,7 +219,7 @@ grunt.initConfig({
 
 ## Release History
 
- * 2016-07-22   v1.2.0   Bump minor JSHint version. Bump other deps. drops node 0.10 and 4.
+ * 2018-09-22   v2.0.0   Bump devDependencies. Drop Node.js < 6 support.
  * 2016-11-23   v1.1.0   Fix relative output Bump minor version
  * 2016-02-16   v1.0.0   Replace String prototype colors with chalk. Update Grunt peerDep to `>=0.4.0`.
  * 2016-01-17   v0.12.0   Update to JSHint ~2.9.0.
@@ -254,4 +261,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Sat Sep 08 2018 10:30:26.*
+*This file was generated on Sat Sep 22 2018 08:57:29.*
