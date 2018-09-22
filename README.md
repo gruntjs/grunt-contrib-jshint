@@ -120,6 +120,14 @@ Default: `null`
 
 Specify a filepath to output the results of a reporter. If `reporterOutput` is specified then all output will be written to the given filepath instead of printed to stdout.
 
+#### makeFilesRelative
+
+Type: `Boolean`  
+Default: `true`
+
+Set `makeFilesRelative` to `false` to make the file paths absolue. instead of being relative to the output directory. 
+
+
 ### Usage examples
 
 #### Wildcards
