@@ -98,6 +98,3 @@ Type: `Boolean`
 Default: `true`
 
 Results of a reporter will use a relative filepath to `reporterOutput`.  If set to `false` then filepaths will appear relative to the current folder.  Unless `reporterOutput` is not set this option will not have any effect.
-
-
-
