@@ -1,9 +1,8 @@
-v1.2.0:
-  date: 2016-07-22
+v2.0.0:
+  date: 2018-09-22
   changes:
-    - Bump minor JSHint version.
-    - Bump other deps.
-    - drops node 0.10 and 4.
+    - Bump devDependencies.
+    - Drop Node.js < 6 support.
 v1.1.0:
   date: 2016-11-23
   changes:
