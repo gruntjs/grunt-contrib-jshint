@@ -18,7 +18,7 @@
   "dependencies": {
     "chalk": "^2.4.1",
     "hooker": "^0.2.3",
-    "jshint": "~2.9.6"
+    "jshint": "2.10.1"
   },
   "devDependencies": {
     "grunt": "^1.0.3",
