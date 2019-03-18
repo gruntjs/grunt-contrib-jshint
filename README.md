@@ -1,4 +1,4 @@
-# grunt-contrib-jshint v2.0.0 [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-jshint.svg?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-jshint) [![Build Status: Windows](https://ci.appveyor.com/api/projects/status/j04ik7qgx21ixyfw/branch/master?svg=true)](https://ci.appveyor.com/project/gruntjs/grunt-contrib-jshint/branch/master)
+# grunt-contrib-jshint v2.1.0 [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-jshint.svg?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-jshint) [![Build Status: Windows](https://ci.appveyor.com/api/projects/status/j04ik7qgx21ixyfw/branch/master?svg=true)](https://ci.appveyor.com/project/gruntjs/grunt-contrib-jshint/branch/master)
 
 > Validate files with JSHint
 
@@ -219,6 +219,7 @@ grunt.initConfig({
 
 ## Release History
 
+ * 2019-03-18   v2.1.0   Bump dependencies. Update to latest JSHint
  * 2018-09-22   v2.0.0   Bump devDependencies. Drop Node.js < 6 support.
  * 2016-11-23   v1.1.0   Fix relative output Bump minor version
  * 2016-02-16   v1.0.0   Replace String prototype colors with chalk. Update Grunt peerDep to `>=0.4.0`.
@@ -261,4 +262,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Sat Sep 22 2018 08:57:29.*
+*This file was generated on Mon Mar 18 2019 08:12:41.*
