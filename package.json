@@ -16,9 +16,9 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "chalk": "^2.4.1",
+    "chalk": "^2.4.2",
     "hooker": "^0.2.3",
-    "jshint": "~2.9.6"
+    "jshint": "~2.10.2"
   },
   "devDependencies": {
     "grunt": "^1.0.3",
@@ -26,7 +26,7 @@
     "grunt-contrib-nodeunit": "^2.0.0"
   },
   "peerDependencies": {
-    "grunt": ">=0.4.0"
+    "grunt": ">=1.0.3"
   },
   "keywords": [
     "gruntplugin"
