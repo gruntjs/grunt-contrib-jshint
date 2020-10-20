@@ -1,3 +1,10 @@
+v3.0.0:
+  date: 2020-10-20
+  changes:
+    - Bump dependencies.
+    - Switch to GitHub actions.
+    - Ensures errors in stdoutEqual callback are logged.
+    - Requires Node 10+.
 v2.1.0:
   date: 2019-03-18
   changes:

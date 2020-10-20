@@ -219,6 +219,7 @@ grunt.initConfig({
 
 ## Release History
 
+ * 2020-10-20   v3.0.0   Bump dependencies. Switch to GitHub actions Ensures errors in stdoutEqual callback are logged Requires Node 10+
  * 2019-03-18   v2.1.0   Bump dependencies. Update to latest JSHint
  * 2018-09-22   v2.0.0   Bump devDependencies. Drop Node.js < 6 support.
  * 2016-11-23   v1.1.0   Fix relative output Bump minor version
@@ -262,4 +263,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Tue Oct 20 2020 09:41:21.*
+*This file was generated on Tue Oct 20 2020 09:55:41.*
