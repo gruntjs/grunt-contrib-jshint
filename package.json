@@ -16,7 +16,7 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "chalk": "^2.4.2",
+    "chalk": "^4.1.0",
     "hooker": "^0.2.3",
     "jshint": "~2.12.0"
   },
