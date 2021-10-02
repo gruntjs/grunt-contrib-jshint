@@ -1,7 +1,7 @@
 {
   "name": "grunt-contrib-jshint",
   "description": "Validate files with JSHint",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "author": {
     "name": "Grunt Team",
     "url": "https://gruntjs.com/"
