@@ -1,4 +1,4 @@
-# grunt-contrib-jshint v3.0.0 [![Build Status](https://github.com/gruntjs/grunt-contrib-jshint/workflows/Tests/badge.svg)](https://github.com/gruntjs/grunt-contrib-jshint/actions?workflow=Tests)
+# grunt-contrib-jshint v3.2.0 [![Build Status](https://github.com/gruntjs/grunt-contrib-jshint/workflows/Tests/badge.svg)](https://github.com/gruntjs/grunt-contrib-jshint/actions?workflow=Tests)
 
 > Validate files with JSHint
 
@@ -219,7 +219,8 @@ grunt.initConfig({
 
 ## Release History
 
- * 2020-10-20   v3.0.0   Bump dependencies. Switch to GitHub actions Ensures errors in stdoutEqual callback are logged Requires Node 10+
+ * 2022-02-17   v3.2.0   Bump dependencies, including jshint.
+ * 2020-10-20   v3.0.0   Bump dependencies. Switch to GitHub actions. Ensures errors in stdoutEqual callback are logged. Requires Node 10+.
  * 2019-03-18   v2.1.0   Bump dependencies. Update to latest JSHint
  * 2018-09-22   v2.0.0   Bump devDependencies. Drop Node.js < 6 support.
  * 2016-11-23   v1.1.0   Fix relative output Bump minor version
@@ -263,4 +264,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
 
-*This file was generated on Tue Oct 20 2020 09:55:41.*
+*This file was generated on Thu Feb 17 2022 21:24:56.*

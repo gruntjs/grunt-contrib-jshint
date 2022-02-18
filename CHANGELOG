@@ -1,3 +1,7 @@
+v3.2.0:
+  date: 2022-02-17
+  changes:
+    - Bump dependencies, including jshint.
 v3.0.0:
   date: 2020-10-20
   changes:
