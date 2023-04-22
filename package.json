@@ -18,7 +18,7 @@
   "dependencies": {
     "chalk": "~4.1.2",
     "hooker": "^0.2.3",
-    "jshint": "~2.13.4"
+    "jshint": "~2.13.6"
   },
   "devDependencies": {
     "grunt": "^1.4.1",
@@ -30,6 +30,5 @@
   ],
   "files": [
     "tasks"
-  ],
-  "appveyor_id": "j04ik7qgx21ixyfw"
+  ]
 }
